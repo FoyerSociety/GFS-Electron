@@ -70,10 +70,10 @@
 })(jQuery);
 
 
-function login(){
+async function login(){
     $('.loading-img').html("<img src='assets/img/loading-44.gif'>");
     $('.alert-danger').html('');
-    eel.login( $('#username').val(), $('#passwd').val() )(validateLogin);
+    await eel.login( $('#username').val(), $('#passwd').val() )(validateLogin);
 }
 
 

@@ -56,6 +56,12 @@ const menu = Menu.buildFromTemplate(
 		},
 		{
 			label: "Edition"
+		},
+		{
+			label: "Apropos"
+		},
+		{
+			label: "Aide"
 		}
 	]
 );

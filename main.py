@@ -31,7 +31,7 @@ def login(usr, passwd):
 	else:
 		cursor = db.cursor()
 		cursor.execute('''
-			SELECT 1 FROM Users WHERE username=%s AND password=%s
+			SELECT 1 FROM Membre WHERE username=%s AND password=%s
 		''', (usr, passwd))
 
 		if len(cursor.fetchall()) == 1:
