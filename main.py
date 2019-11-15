@@ -43,7 +43,7 @@ def test():
 
 
 def main():
-	eel.start('login.html', position=(135, 35), options=options)
+	eel.start('login.html',  options=options)
 
 
 @eel.expose

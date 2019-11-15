@@ -10,7 +10,12 @@ function createWindow () {
 	mainWindow = new BrowserWindow({
 		width: 1100,
 		height: 660,
-		resizable: false,
+		center: true,
+		maxWidth: 1100,
+		minWidth: 1100,
+		maxHeight: 680,
+		minHeight: 680,
+		useContentSize: true,
 		webPreferences: {
 			nodeIntegration: true
 		}
@@ -23,6 +28,12 @@ function createWindow () {
 	})
 }
 
+if (process.platform.toLowerCase()  == 'win32'){
+	haut  = 700
+}
+else{
+	haut = 660
+}
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
