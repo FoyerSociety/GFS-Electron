@@ -24,7 +24,7 @@ $( function(){
         })    
     });
 
-    
+
     let Month = new Array('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
     
     for (let i=0; i<Month.length; i++){
@@ -38,3 +38,9 @@ $( function(){
 
 }
 );
+
+
+eel.expose(afficher)
+function afficher(val){
+    alert(val);
+}

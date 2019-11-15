@@ -1,11 +1,12 @@
 import eel
 import sys
+import whichcraft as whc
 from db.database import database 
 
 
 options = {
 	'mode' : 'custom',
-	'args' : ['/usr/bin/electron' if sys.platform == 'linux' else '', '.']
+	'args' : ['/usr/bin/electron' if sys.platform == 'linux' else fr'{whc.which("electron")}', '.']
 }
 
 eel.init('view')
@@ -45,13 +46,38 @@ def getMember():
 	try:
 		db = database()
 	except:
-		return 500
+		eel.afficher("Probleme au niveau de la connexion...")
+		return None
 	else:
 		cursor = db.cursor()
 		cursor.execute('''
 			SELECT username FROM Membre;
 		''')
 		return cursor.fetchall()
+
+
+@eel.expose
+def addCotisation(usr, somme, mois, annee):
+	try:
+		db = database()
+	except:
+		eel.afficher("Probleme au niveau de la connexion...")
+		return None 
+	else:
+		cursor = db.cursor()
+		try:
+			cursor.execute('''
+				UPDATE Argent SET paye=paye+%s WHERE username=%s AND mois=%s AND annee=%s
+			''', (somme, usr, mois, annee) )
+		except:
+			db.rollback()
+			return False
+		
+		else:
+			db.commit()
+			return True
+
+
 
 
 if __name__ == '__main__':
