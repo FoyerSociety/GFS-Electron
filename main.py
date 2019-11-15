@@ -5,6 +5,7 @@ from datetime import datetime
 from db.database import database 
 
 user = ''
+users = ''
 
 
 options = {
@@ -25,6 +26,12 @@ def setUser(val):
 def getUser():
 	global user 
 	return user.capitalize()
+
+
+@eel.expose
+def setUsers(val):
+	global users
+	users = val 
 
 
 @eel.expose
@@ -59,17 +66,24 @@ def login(usr, passwd):
 
 @eel.expose
 def getMember():
-	try:
-		db = database()
-	except:
-		eel.afficher("Probleme au niveau de la connexion...")
-		return None
+	global users 
+
+	if users == '':
+		try:
+			db = database()
+		except:
+			eel.afficher("Probleme au niveau de la connexion...")
+			return None
+		else:
+			cursor = db.cursor()
+			cursor.execute('''
+				SELECT username FROM Membre;
+			''')
+			users = cursor.fetchall()
+			return users 
 	else:
-		cursor = db.cursor()
-		cursor.execute('''
-			SELECT username FROM Membre;
-		''')
-		return cursor.fetchall()
+		return users
+
 
 
 @eel.expose
