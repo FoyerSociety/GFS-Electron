@@ -31,15 +31,27 @@ def login(usr, passwd):
 	else:
 		cursor = db.cursor()
 		cursor.execute('''
-			SELECT 1 FROM Users WHERE username=%s AND PASSWORD=%s
+			SELECT 1 FROM Users WHERE username=%s AND password=%s
 		''', (usr, passwd))
 
-		
 		if len(cursor.fetchall()) == 1:
 			return True
 		else:
-			return 'Authentification failed' 
+			return 'Authentification failed'
 
+
+@eel.expose
+def getMember():
+	try:
+		db = database()
+	except:
+		return 500
+	else:
+		cursor = db.cursor()
+		cursor.execute('''
+			SELECT username FROM Membre;
+		''')
+		return cursor.fetchall()
 
 
 if __name__ == '__main__':

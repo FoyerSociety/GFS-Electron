@@ -88,3 +88,16 @@ function validateLogin(response){
     }
     
 }
+
+
+function suggestMember(members){
+    for (let i=0; i<members.length; i++){
+        let usr = `<option>${members[i]}<option>`;
+        $('#dataMember').append(usr);
+    }
+    
+
+}
+
+eel.getMember()(suggestMember); 
+// appel d'une requete de tous les membres pour l'autosuggestion
