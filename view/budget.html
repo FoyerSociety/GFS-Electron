@@ -90,6 +90,13 @@
 			</li>
 
 
+			<li class="nav-item">
+				<a class="nav-link" href="#">
+				<i class="fa fa-bar-chart"></i>
+				<span>Statistique</span></a>
+			</li>
+
+
 
 			<!-- Heading -->
 			<div class="sidebar-heading" style="color: #fff;">
@@ -267,33 +274,38 @@
 							</span>
 	
 							<div class="entrer wrap-input100 validate-input m-t-85 m-b-35" >
-								<input class="input100 info1" type="text">
-								<span class="focus-input100" data-placeholder="Nom"></span>
+									<input class="user_input input100 info1" type="text" list="dataMember">
+									<span class="focus-input100" data-placeholder="User"></span>
+									<datalist id="dataMember">
+										<!-- Ici se place les suggesions de prenoms -->
+									</datalist>
 							</div>
 	
 							<div class="entrer wrap-input100 validate-input m-b-50" >
-								<input class="input100 info2" type="text">
-								<span class="focus-input100" data-placeholder="Prénoms"></span>
+								<input class="date_input input100 info2" type="date">
 							</div>
 
 
 							<div class="entrer wrap-input100 validate-input m-b-50" >
-								<input class="input100 info2" type="text">
-								<span class="focus-input100" data-placeholder="Prénoms"></span>
+								<input class="somme_input input100 info2" type="text">
+								<span class="focus-input100" data-placeholder="Somme"></span>
 							</div>
 
 							<div class="entrer wrap-input100 validate-input m-b-50" >
-								<input class="input100 info2" type="text">
-								<span class="focus-input100" data-placeholder="Prénoms"></span>
+								<input class="motif_input input100 info2" type="text" list="motif_suggest">
+								<span class="focus-input100" data-placeholder="Motifs"></span>
+								<datalist id="motif_suggest">
+									<option> Repas </option>
+									<option> Charbon </option>
+									<option> Grand Menage </option>
+									<option> Fête </option>
+								</datalist>
 							</div>
 							
 							<div class="container-login100-form-btn">
-								<button class="login100-form-btn" onclick=nextInfo()>
-									<i class="fa fa-angle-right"> <span class="text-btn">SUIVANT</span> </i>
+								<button class="login100-form-btn" type="button" onclick=addDepense($(this))>
+									<i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
 								</button>
-							</div>
-							<div style="margin-top: 15px;" class="loading-img text-center center">
-								<!-- Une image gif de loading se met ici -->
 							</div>
 						</form>
 					</div>

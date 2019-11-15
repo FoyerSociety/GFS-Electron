@@ -1,7 +1,10 @@
 import eel
 import sys
 import whichcraft as whc
+from datetime import datetime
 from db.database import database 
+
+user = ''
 
 
 options = {
@@ -10,6 +13,19 @@ options = {
 }
 
 eel.init('view')
+
+
+@eel.expose
+def setUser(val):
+	global user
+	user = val
+
+
+@eel.expose
+def getUser():
+	global user 
+	return user.capitalize()
+
 
 @eel.expose
 def test():
@@ -73,9 +89,58 @@ def addCotisation(usr, somme, mois, annee):
 			db.rollback()
 			return False
 		
+	try:
+		cursor.execute(''' 
+			INSERT INTO Transaction(username, somme, motif, date) VALUES (%s, %s, %s, %s)
+		''', (usr, somme, "cotisation", datetime.today()) )
+	except:
+		db.rollback()
+		return False
+	else:
+		db.commit()
+		return True
+
+
+@eel.expose 
+def addDepense(usr, date, somme, motif):
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion au base de donnée")
+		return None 
+	else:
+		cursor = db.cursor()
+
+		if motif.lower() == 'repas':
+			try:
+				cursor.execute('''
+					INSERT INTO Repas(username, somme, date) VALUES(%s, %s, %s)
+				''', (usr, somme, date) )
+			except:
+				db.rollback()
+				return False
+		else:
+			try:
+				cursor.execute('''
+					INSERT INTO Depense(username, somme, date, motif) VALUES(%s, %s, %s, %s)
+				''', (usr, somme, date, motif) )
+			
+			except:
+				db.rollback()
+				return False
+
+		try:
+			cursor.execute(''' 
+				INSERT INTO Transaction(username, somme, motif, date) VALUES (%s, %s, %s, %s)
+			''', (usr, -int(somme), motif, datetime.today()) )
+		except:
+			db.rollback()
+			return None
 		else:
 			db.commit()
-			return True
+			return True 
+			
+
 
 
 

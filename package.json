@@ -24,8 +24,8 @@
     "Electron",
     "Eel"
   ],
-  "author": "Gaetan Jonathan",
-  "license": "ISC",
+  "author": "Gaetan Jonathan, Landry Manankoraisina, Fsociety",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/FoyerSociety/GestionFoyer/issues"
   },
