@@ -13,8 +13,8 @@ function createWindow () {
 		center: true,
 		maxWidth: 1100,
 		minWidth: 1100,
-		maxHeight: 680,
-		minHeight: 680,
+		maxHeight: haut,
+		minHeight: haut,
 		useContentSize: true,
 		webPreferences: {
 			nodeIntegration: true
@@ -29,7 +29,7 @@ function createWindow () {
 }
 
 if (process.platform.toLowerCase()  == 'win32'){
-	haut  = 700
+	haut  = 680
 }
 else{
 	haut = 660

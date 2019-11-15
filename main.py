@@ -152,7 +152,33 @@ def addDepense(usr, date, somme, motif):
 			return None
 		else:
 			db.commit()
-			return True 
+			return True
+
+
+@eel.expose 
+def getHistory():
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	else:
+		cursor = db.cursor()
+
+		try:
+			cursor.execute('''
+				SELECT * FROM Transaction
+			''')
+		except:
+			return (False, None)
+
+		else:
+			value = cursor.fetchall()
+			for i in range(len(value)):
+				value = list(value)
+				value[i] = list(value[i])
+				value[i][2] = value[i][2].strftime(r"%d %m %Y à %H:%M:%S")
+			return (True, value)
 			
 
 
