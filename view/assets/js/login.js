@@ -79,6 +79,7 @@ async function login(){
 
 function validateLogin(response){
     if (response == true){
+        eel.setUser($('#username').val());
         window.location ='budget.html';
     }
     else{

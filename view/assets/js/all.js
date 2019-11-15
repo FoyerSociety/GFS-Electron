@@ -13,6 +13,8 @@ eel.getMember()(suggestMember);
 
 $( function(){
 
+    eel.getUser()(setUser);
+
     $('.input100').each(function(){
         $(this).on('blur', function(){
             if($(this).val().trim() != "") {
@@ -43,4 +45,9 @@ $( function(){
 eel.expose(afficher)
 function afficher(val){
     alert(val);
+}
+
+
+function setUser(val){
+    $('.user_top').text(val);
 }
