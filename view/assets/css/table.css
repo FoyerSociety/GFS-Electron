@@ -8,11 +8,17 @@
 }
 
 .head .column3{
+  padding-left:50px;
+}
+.head .column4{
   padding-left:60px;
+}
+.head .column2{
+  padding-left:20px;
 }
 .body .column3{
   padding-left:70px;
-  background-color: red;
+ /* background-color: red;*/
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -143,7 +149,7 @@ th, td {
 }
 
 .table100-body {
-  max-height: 450px;
+  max-height: 425px;
   overflow: auto;
 }
 
