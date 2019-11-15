@@ -1,6 +1,6 @@
 .head .column1, .head .column2, .head .column3, .head .column4{
   font-family: Poppins-Regular !important;
-  font-size: 17px !important;
+  font-size: 16px !important;
 }
 
 .body .column1, .body .column2, .body .column3, .body .column4{
@@ -162,8 +162,7 @@ th, td {
   font-size: 18px;
   color: #fff;
   line-height: 1.4;
-
-  background-color: #6c7ae0;
+  background-color: #00ad5f;
 }
 
 .table100.ver1 td {
@@ -180,7 +179,7 @@ th, td {
 /*---------------------------------------------*/
 
 .table100.ver1 {
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
