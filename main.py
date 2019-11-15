@@ -1,15 +1,21 @@
 import eel
 import sys
-import whichcraft as whc
 from db.database import database 
 
 
 options = {
 	'mode' : 'custom',
-	'args' : ['/usr/bin/electron' if sys.platform == 'linux' else fr"{whc.which('electron')}", '.']
+	'args' : ['/usr/bin/electron' if sys.platform == 'linux' else '', '.']
 }
 
 eel.init('view')
+
+@eel.expose
+def test():
+	'''
+		fonction pour les tests 
+								'''
+	print('hello')
 
 
 def main():

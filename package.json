@@ -1,0 +1,33 @@
+{
+  "name": "gestionfoyer",
+  "version": "1.0.0",
+  "description": "Une plateforme de gestion du foyer Fsociety",
+  "main": "main.js",
+  "dependencies": {
+    "electron-debug": "^3.0.1",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "python main.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoyerSociety/GestionFoyer.git"
+  },
+  "keywords": [
+    "Gestion",
+    "Foyer",
+    "Argent",
+    "Jirama",
+    "Menage",
+    "Electron",
+    "Eel"
+  ],
+  "author": "Gaetan Jonathan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FoyerSociety/GestionFoyer/issues"
+  },
+  "homepage": "https://github.com/FoyerSociety/GestionFoyer#readme"
+}
