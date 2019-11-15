@@ -79,7 +79,7 @@ async function login(){
 
 function validateLogin(response){
     if (response == true){
-        window.location ='insert.html';
+        window.location ='budget.html';
     }
     else{
         let error = `<p>  ${response} </p>`;
