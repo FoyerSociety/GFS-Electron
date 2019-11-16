@@ -31,14 +31,14 @@ async function addDepense(rpr){
     let date = form.find('.date_input').val();
     let somme = form.find('.somme_input').val();
     let motif = form.find('.motif_input').val();
-    $('.addCotbtn').html("<img src='assets/img/loading-white.gif'>");
+    $('.addDepbtn').html("<img src='assets/img/loading-white.gif'>");
     await eel.addDepense(user, date, somme, motif)(fedDep);
 }
 
 
 function fedDep(val){
     let btnval= "<i class='fa fa-angle-right'> <span class='text-btn'>VALIDER</span> </i>";
-    $('.addCotbtn').html(btnval);
+    $('.addDepbtn').html(btnval);
 
     if (val == true){
         alert('La Transaction a réussi');

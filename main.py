@@ -167,7 +167,7 @@ def getHistory():
 
 		try:
 			cursor.execute('''
-				SELECT * FROM Transaction
+				SELECT * FROM Transaction ORDER BY id DESC
 			''')
 		except:
 			return (False, None)
@@ -177,7 +177,7 @@ def getHistory():
 			for i in range(len(value)):
 				value = list(value)
 				value[i] = list(value[i])
-				value[i][2] = value[i][2].strftime(r"%d %m %Y à %H:%M:%S")
+				value[i][2] = value[i][2].strftime(r"%d/%m/%Y à %H:%M:%S")
 			return (True, value)
 			
 
