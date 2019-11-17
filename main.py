@@ -1,20 +1,29 @@
 import eel
 import sys
-import whichcraft as whc
+import mysql.connector
+from whichcraft import which
 from datetime import datetime
-from db.database import database 
+from db import db_value
 
-user = ''
-users = ''
+user, users = '', ''
 
 
 options = {
 	'mode' : 'custom',
-	'args' : ['/usr/bin/electron' if sys.platform == 'linux' else 'electron.cmd' if sys.platform == 'win32' else f'{whc.which("electron")}',
+
+	'args' : [
+				'/usr/bin/electron' 
+					if sys.platform == 'linux' 
+						else 'electron.cmd' if sys.platform == 'win32' 
+							else f'{which("electron")}',
 		 '.']
 }
 
 eel.init('view')
+
+
+def database():
+	return mysql.connector.connect(**db_value())
 
 
 @eel.expose
