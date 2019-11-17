@@ -19,7 +19,7 @@
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
-		
+
 		<!-- Sidebar -->
 		<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" >
 
@@ -48,16 +48,16 @@
 			<div class="sidebar-heading" style="color: #fff;">
 				Affichage
 			</div>
-		
+
 			<!-- Nav Item - Charts -->
 			<li class="nav-item" style="margin-top:1% !important">
 				<a class="nav-link" href="search.html">
 				<i class="fa fa-birthday-cake"></i>
 				<span>Menu répas</span></a>
 			</li>
-		
+
 			<!-- Nav Item - Tables -->
-			<li class="nav-item" style="margin-top:-7% !important"> 
+			<li class="nav-item" style="margin-top:-7% !important">
 				<a class="nav-link" href="history.html">
 				<i class="fa fa-money"></i>
 				<span>Cotisation par mois</span></a>
@@ -69,7 +69,7 @@
 				<i class="fa fa-location-arrow"></i>
 				<span>Transactions</span></a>
 			</li>
-		
+
 			<!-- Nav Item - Tables -->
 			<li class="nav-item" style="margin-top:-7% !important">
 				<a class="nav-link" href="result.html">
@@ -102,29 +102,35 @@
 			<div class="sidebar-heading" style="color: #fff;">
 				Gestion
 			</div>
-	
-		
+
+
 			<!-- Nav Item - Charts -->
 			<li class="nav-item" style="margin-top:1% !important">
 				<a class="nav-link" href="#" style="color:#fff !important; font-family:Poppins-SemiBold;">
 				<i class="fa fa-money"></i>
 				<span>Gestion de Budgets</span></a>
 			</li>
-		
+
 			<!-- Nav Item - Charts -->
 			<li class="nav-item" style="margin-top:-7% !important">
 				<a class="nav-link" href="search.html">
 				<i class="fa fa-trash"></i>
 				<span>Gestion de ménages</span></a>
 			</li>
-		
+
+			<li class="nav-item" style="margin-top:-7% !important">
+				<a class="nav-link" href="search.html">
+				<i class="fa fa-users"></i>
+				<span>Gestion d'utilisateurs</span></a>
+			</li>
+
 			<!-- Divider -->
 			<hr class="sidebar-divider d-none d-md-block">
 
 		</ul>
 		<!-- End of Sidebar -->
 
-		
+
 		<!-- Content Wrapper -->
 		<div id="content-wrapper" class="d-flex flex-column">
 			<!-- Main Content -->
@@ -148,7 +154,7 @@
 								<!-- Counter - Alerts -->
 								<span class="badge badge-danger badge-counter">10</span>
 							</a>
-							
+
 							<!-- Dropdown - Alerts -->
 							<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
 								<h6 class="dropdown-header"> Notifications </h6>
@@ -198,7 +204,7 @@
 								<span class="user_top mr-2 d-none d-lg-inline text-gray-600 small">chargement...</span>
 								<img class="img-profile rounded-circle" src="https://images.unsplash.com/photo-1496989981497-27d69cdad83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=544&q=80">
 							</a>
-						
+
 							<!-- Dropdown - User Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -219,7 +225,7 @@
 							<span class="login100-form-title p-b-70">
 								Cotisation
 							</span>
-	
+
 							<div class="entrer wrap-input100 validate-input m-t-85 m-b-35" >
 								<input class="user_input input100 info1" type="text" list="dataMember">
 								<span class="focus-input100" data-placeholder="User"></span>
@@ -227,7 +233,7 @@
 									<!-- Ici se place les suggesions de prenoms -->
 								</datalist>
 							</div>
-	
+
 							<div class="entrer wrap-input100 validate-input m-b-50" >
 								<input class="somme_input input100 info2" type="text">
 								<span class="focus-input100" data-placeholder="Somme"></span>
@@ -248,7 +254,7 @@
 									<!-- Ici se place 10 années -->
 								</datalist>
 							</div>
-	
+
 							<div class="container-login100-form-btn">
 								<button type="button" class="addCotbtn login100-form-btn" onclick=addCotisation($(this))>
 									<i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
@@ -264,7 +270,7 @@
 				</div>
 				<!-- /.container-fluid -->
 
-				
+
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
 					<div class="wrap-login100 p-t-85 p-b-20">
@@ -272,7 +278,7 @@
 							<span class="login100-form-title p-b-70">
 								Dépense
 							</span>
-	
+
 							<div class="entrer wrap-input100 validate-input m-t-85 m-b-35" >
 									<input class="user_input input100 info1" type="text" list="dataMember">
 									<span class="focus-input100" data-placeholder="User"></span>
@@ -280,7 +286,7 @@
 										<!-- Ici se place les suggesions de prenoms -->
 									</datalist>
 							</div>
-	
+
 							<div class="entrer wrap-input100 validate-input m-b-50" >
 								<input class="date_input input100 info2" type="date">
 							</div>
@@ -301,7 +307,7 @@
 									<option> Fête </option>
 								</datalist>
 							</div>
-							
+
 							<div class="container-login100-form-btn">
 								<button class="addDepbtn login100-form-btn" type="button" onclick=addDepense($(this))>
 									<i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>

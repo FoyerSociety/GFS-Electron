@@ -10,7 +10,8 @@ users = ''
 
 options = {
 	'mode' : 'custom',
-	'args' : ['/usr/bin/electron' if sys.platform == 'linux' else fr'{whc.which("electron")}', '.']
+	'args' : ['/usr/bin/electron' if sys.platform == 'linux' else 'electron.cmd' if sys.platform == 'win32' else f'{whc.which("electron")}',
+		 '.']
 }
 
 eel.init('view')
