@@ -47,3 +47,29 @@ function fedDep(val){
         alert('La Transaction a echoué');
     }
 }
+
+
+
+function set_privilege(val){
+
+    if (val == 'su'){
+        $('.private').each(function(){
+            $(this).removeAttr('disabled');
+            $(this).hover(function(){
+                $(this).css("cursor", "default");
+            });
+        });
+    }
+    else{
+        $('.private').each(function(){
+            $(this).attr('disabled', 'disabled');
+            $(this).hover(function(){
+                $(this).css("cursor", "not-allowed");
+            });
+        });
+    }
+
+}
+
+
+eel.privilege()(set_privilege)

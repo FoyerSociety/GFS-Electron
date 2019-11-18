@@ -191,7 +191,22 @@ def getHistory():
 			return (True, value)
 			
 
+@eel.expose
+def privilege():
+	global user 
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	else:
+		cursor = db.cursor()
 
+		cursor.execute('''
+			SELECT privilege FROM Membre WHERE username=%s
+		''', (user,))
+
+		return cursor.fetchall()
 
 
 
