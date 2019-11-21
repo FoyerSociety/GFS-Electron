@@ -5,7 +5,7 @@ from whichcraft import which
 from datetime import datetime
 from db import db_value
 
-user, users = '', ''
+user, users = '', None
 
 
 options = {
@@ -78,7 +78,7 @@ def login(usr, passwd):
 def getMember():
 	global users 
 
-	if users == '':
+	if users is None:
 		try:
 			db = database()
 		except:
