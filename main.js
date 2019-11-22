@@ -1,7 +1,9 @@
 const {app, BrowserWindow, Menu} = require('electron')
-// const debug = require('electron-debug');
+const $ = require('jquery')
 
-// debug();
+const debug = require('electron-debug');
+
+debug();
 
 let mainWindow;
 
@@ -16,6 +18,7 @@ function createWindow () {
 		maxHeight: haut,
 		minHeight: haut,
 		useContentSize: true,
+		backgroundColor: 'black',
 		webPreferences: {
 			nodeIntegration: true
 		}
@@ -66,7 +69,15 @@ const menu = Menu.buildFromTemplate(
 			]
 		},
 		{
-			label: "Edition"
+			label: "Edition",
+			submenu : [
+				{
+					label: "Mode Sombre",
+					click: function(){
+						mainWindow.backgroundColor = 'black';
+					}
+				}
+			]
 		},
 		{
 			label: "Apropos"

@@ -1,0 +1,15 @@
+altgraph==0.16.1
+bottle==0.12.17
+bottle-websocket==0.2.9
+Cython==0.29.14
+Eel==0.10.4
+future==0.18.2
+gevent==1.4.0
+gevent-websocket==0.10.1
+greenlet==0.4.15
+mysql-connector-python==8.0.18
+protobuf==3.10.0
+PyInstaller==3.5
+six==1.13.0
+tk==0.1.0
+whichcraft==0.6.1
