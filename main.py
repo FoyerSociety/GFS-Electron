@@ -1,6 +1,8 @@
 import eel
 import sys
 import os
+import json
+import hashlib
 import mysql.connector
 from whichcraft import which
 from datetime import datetime
@@ -13,9 +15,9 @@ options = {
 	'mode' : 'custom',
 
 	'args' : [
-				'/usr/bin/electron' 
-					if sys.platform == 'linux' 
-						else 'electron.cmd' if sys.platform == 'win32' 
+				'/usr/bin/electron'
+					if sys.platform == 'linux'
+						else 'electron.cmd' if sys.platform == 'win32'
 							else f'{which("electron")}',
 		 '.']
 }
@@ -24,7 +26,12 @@ eel.init('view')
 
 
 def database():
-	return mysql.connector.connect(**db_value())
+	file = open('package.json', 'r')
+	file_parse = json.load(file)
+	key = hashlib.sha1(file_parse['author'].encode())
+	file.close()
+	print(key.hexdigest())
+	return mysql.connector.connect(**db_value(key.hexdigest()))
 
 
 @eel.expose
@@ -35,20 +42,20 @@ def setUser(val):
 
 @eel.expose
 def getUser():
-	global user 
+	global user
 	return user.capitalize()
 
 
 @eel.expose
 def setUsers(val):
 	global users
-	users = val 
+	users = val
 
 
 @eel.expose
 def test():
 	'''
-		fonction pour les tests 
+		fonction pour les tests
 								'''
 	print('hello')
 
@@ -77,7 +84,7 @@ def login(usr, passwd):
 
 @eel.expose
 def getMember():
-	global users 
+	global users
 
 	if users is None:
 		try:
@@ -91,11 +98,21 @@ def getMember():
 				SELECT username FROM Membre;
 			''')
 			users = cursor.fetchall()
-			return users 
+			return users
 	else:
 		return users
 
+def db_value(key):
+	val  = os.popen(f".\\db.gj.windows {key}" 
+					if sys.platform == "win32" 
+					else f"./db.gj.linux {key}")
+	val = val.read().split(' ')
 
+	return {
+	'host' : val[0],
+	'user' : val[1],
+	'password' : val[2],
+	'database' : val[3] }
 
 @eel.expose
 def addCotisation(usr, somme, mois, annee):
@@ -103,7 +120,7 @@ def addCotisation(usr, somme, mois, annee):
 		db = database()
 	except:
 		eel.afficher("Probleme au niveau de la connexion...")
-		return None 
+		return None
 	else:
 		cursor = db.cursor()
 		try:
@@ -113,9 +130,9 @@ def addCotisation(usr, somme, mois, annee):
 		except:
 			db.rollback()
 			return False
-		
+
 	try:
-		cursor.execute(''' 
+		cursor.execute('''
 			INSERT INTO Transaction(username, somme, motif, date) VALUES (%s, %s, %s, %s)
 		''', (usr, somme, "cotisation", datetime.today()) )
 	except:
@@ -126,13 +143,13 @@ def addCotisation(usr, somme, mois, annee):
 		return True
 
 
-@eel.expose 
+@eel.expose
 def addDepense(usr, date, somme, motif):
 	try:
 		db = database()
 	except:
 		eel.afficher("Une erreur s'est produite lors de la connexion au base de donnée")
-		return None 
+		return None
 	else:
 		cursor = db.cursor()
 
@@ -149,13 +166,13 @@ def addDepense(usr, date, somme, motif):
 				cursor.execute('''
 					INSERT INTO Depense(username, somme, date, motif) VALUES(%s, %s, %s, %s)
 				''', (usr, somme, date, motif) )
-			
+
 			except:
 				db.rollback()
 				return False
 
 		try:
-			cursor.execute(''' 
+			cursor.execute('''
 				INSERT INTO Transaction(username, somme, motif, date) VALUES (%s, %s, %s, %s)
 			''', (usr, -int(somme), motif, datetime.today()) )
 		except:
@@ -166,7 +183,7 @@ def addDepense(usr, date, somme, motif):
 			return True
 
 
-@eel.expose 
+@eel.expose
 def getHistory():
 	try:
 		db = database()
@@ -190,11 +207,11 @@ def getHistory():
 				value[i] = list(value[i])
 				value[i][2] = value[i][2].strftime(r"%d/%m/%Y à %H:%M:%S")
 			return (True, value)
-			
+
 
 @eel.expose
 def privilege():
-	global user 
+	global user
 	try:
 		db = database()
 	except:
@@ -212,15 +229,14 @@ def privilege():
 
 def kill_prog():
 	os.system('netstat -paunt|grep 8000 > .file.tmp')
-	
+
 	val = os.popen('cut -d / -f 1 .file.tmp && rm .file.tmp')
 	val = val.read()
-
 	if val != '':
 
 		val = val.split(' ')[-1][:-1]
 		os.system(f'kill -9 {val}')
-	
+
 
 
 if __name__ == '__main__':

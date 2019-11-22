@@ -1,9 +1,8 @@
 const {app, BrowserWindow, Menu} = require('electron')
 const $ = require('jquery')
 
-const debug = require('electron-debug');
-
-debug();
+// const debug = require('electron-debug');
+// debug();
 
 let mainWindow;
 
@@ -18,7 +17,6 @@ function createWindow () {
 		maxHeight: haut,
 		minHeight: haut,
 		useContentSize: true,
-		backgroundColor: 'black',
 		webPreferences: {
 			nodeIntegration: true
 		}
