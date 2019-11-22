@@ -1,5 +1,6 @@
 import eel
 import sys
+import os
 import mysql.connector
 from whichcraft import which
 from datetime import datetime
@@ -209,6 +210,20 @@ def privilege():
 		return cursor.fetchall()
 
 
+def kill_prog():
+	os.system('netstat -paunt|grep 8000 > .file.tmp')
+	
+	val = os.popen('cut -d / -f 1 .file.tmp && rm .file.tmp')
+	val = val.read()
+
+	if val != '':
+
+		val = val.split(' ')[-1][:-1]
+		os.system(f'kill -9 {val}')
+	
+
 
 if __name__ == '__main__':
+	if sys.platform == 'linux':
+		kill_prog()
 	main()
