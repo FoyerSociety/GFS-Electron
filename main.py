@@ -1,3 +1,5 @@
+#! env/bin/python
+
 import eel
 import sys
 import os
@@ -6,7 +8,7 @@ import hashlib
 import mysql.connector
 from whichcraft import which
 from datetime import datetime
-from db import db_value
+
 
 user, users = '', None
 
@@ -30,7 +32,6 @@ def database():
 	file_parse = json.load(file)
 	key = hashlib.sha1(file_parse['author'].encode())
 	file.close()
-	print(key.hexdigest())
 	return mysql.connector.connect(**db_value(key.hexdigest()))
 
 
@@ -102,10 +103,11 @@ def getMember():
 	else:
 		return users
 
+
 def db_value(key):
-	val  = os.popen(f".\\db.gj.windows {key}" 
-					if sys.platform == "win32" 
-					else f"./db.gj.linux {key}")
+	val  = os.popen(f".\\db.windows {key}"
+					if sys.platform == "win32"
+					else f"./db.linux {key}")
 	val = val.read().split(' ')
 
 	return {
@@ -113,6 +115,7 @@ def db_value(key):
 	'user' : val[1],
 	'password' : val[2],
 	'database' : val[3] }
+
 
 @eel.expose
 def addCotisation(usr, somme, mois, annee):
@@ -233,7 +236,6 @@ def kill_prog():
 	val = os.popen('cut -d / -f 1 .file.tmp && rm .file.tmp')
 	val = val.read()
 	if val != '':
-
 		val = val.split(' ')[-1][:-1]
 		os.system(f'kill -9 {val}')
 
