@@ -4,6 +4,6 @@ Type=Application
 Name=FoyerApp
 Exec=foyerApp
 Terminal=false
-Icon=/opt/FoyerSociety/foyer.png
+Icon=/opt/FoyerSociety/src/foyer.png
 Categories=Utilitaire;Gestion;
 Comment=Application de Gestion totale de foyer.

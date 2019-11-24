@@ -198,7 +198,7 @@ def getHistory():
 
 		try:
 			cursor.execute('''
-				SELECT * FROM Transaction ORDER BY id DESC
+				SELECT * FROM Transaction ORDER BY id DESC LIMIT 20
 			''')
 		except:
 			return (False, None)
@@ -231,7 +231,7 @@ def privilege():
 
 
 def kill_prog():
-	os.system('netstat -paunt|grep 8000 > .file.tmp')
+	os.system('netstat -paunt|grep 8000 > /tmp/.file.tmp')
 
 	val = os.popen('cut -d / -f 1 /tmp/.file.tmp && rm /tmp/.file.tmp')
 	val = val.read()

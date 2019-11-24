@@ -75,7 +75,7 @@ chmod +x ./change_env.py
 ./change_env.py
 chmod +x foyerApp.py
 sudo rm -r /opt/FoyerSociety && sudo mkdir /opt/FoyerSociety 
-sudo cp -rf src/foyer.png eel.js env main.js foyerApp.py foyerApp db.linux package.json package-lock.json view /opt/FoyerSociety/
+sudo cp -rf src eel.js env main.js foyerApp.py foyerApp db.linux package.json package-lock.json view /opt/FoyerSociety/
 set +x 
 
 if [ -e "node_modules" ] && [ -d "node_modules" ]
@@ -83,7 +83,7 @@ then
     sudo cp -r node_modules /opt/FoyerSociety/
 fi
 
-rm foyerApp foyerApp
+rm foyerApp foyerApp.py
 
 echo -e "\n Création de Bureau et Application dans le systeme"
 set -x

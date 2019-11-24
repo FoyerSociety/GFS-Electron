@@ -55,6 +55,7 @@ function set_privilege(val){
     if (val == 'su'){
         $('.private').each(function(){
             $(this).removeAttr('disabled');
+            $(this).removeAttr('title');
         });
     }
     else{
