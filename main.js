@@ -1,4 +1,5 @@
 const {app, BrowserWindow, Menu} = require('electron')
+const $ = require('jquery')
 
 // const debug = require('electron-debug');
 // debug();

@@ -1,6 +1,7 @@
-import sys
-import verification
+#! env/bin/python
+
 import eel
+import sys
 import os
 import json
 import hashlib
@@ -19,9 +20,7 @@ options = {
 					if sys.platform == 'linux'
 						else 'electron.cmd' if sys.platform == 'win32'
 							else f'{which("electron")}',
-		 '.'] ,
-		
-	'port' : 1903
+		 '.']
 }
 
 eel.init('view')
@@ -223,7 +222,7 @@ def privilege():
 
 
 def kill_prog():
-	os.system('netstat -paunt|grep 1903 > /tmp/.file.tmp')
+	os.system('netstat -paunt|grep 8000 > /tmp/.file.tmp')
 
 	val = os.popen('cut -d / -f 1 /tmp/.file.tmp && rm /tmp/.file.tmp')
 	val = val.read()
