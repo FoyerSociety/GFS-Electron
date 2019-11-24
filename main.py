@@ -9,9 +9,8 @@ import mysql.connector
 from whichcraft import which
 from datetime import datetime
 
-print(os.path.dirname(__file__))
-user, users = '', None
 
+user, users = '', None
 
 options = {
 	'mode' : 'custom',
@@ -52,15 +51,7 @@ def setUsers(val):
 	global users
 	users = val
 
-
-@eel.expose
-def test():
-	'''
-		fonction pour les tests
-								'''
-	print('hello')
-
-
+ 
 def main():
 	eel.start('login.html',  options=options)
 
