@@ -1,5 +1,3 @@
-#! env/bin/python
-
 import eel
 import sys
 import os
