@@ -70,21 +70,26 @@ sleep 2
 echo -e "\nInstallation dependance npm${neutre}"
 
 set -x
+echo -e '#!/bin/bash\ncd /opt/FoyerSociety/\n./foyerApp.py' > foyerApp && chmod +x foyerApp
+chmod +x ./change_env.py 
+./change_env.py
+chmod +x foyerApp.py
 sudo rm -r /opt/FoyerSociety && sudo mkdir /opt/FoyerSociety 
-sudo cp -rf src/foyer.png eel.js env main.js main.py db.linux package.json package-lock.json view /opt/FoyerSociety/
+sudo cp -rf src/foyer.png eel.js env main.js foyerApp.py foyerApp db.linux package.json package-lock.json view /opt/FoyerSociety/
 set +x 
 
 if [ -e "node_modules" ] && [ -d "node_modules" ]
 then
-    cp -rf node_modules /opt/FoyerSociety/
+    sudo cp -r node_modules /opt/FoyerSociety/
 fi
 
+rm foyerApp foyerApp
 
 echo -e "\n Création de Bureau et Application dans le systeme"
 set -x
-sudo ln -sf /opt/FoyerSociety/main.py /usr/bin/foyerApp
-sudo cp -f src/FoyerApp.desktop /usr/share/applications/
-sudo chmod 777 /usr/share/applications/FoyerApp.desktop
+sudo ln -sf /opt/FoyerSociety/foyerApp /usr/bin/foyerApp
+sudo cp -f src/foyerApp.desktop /usr/share/applications/
+sudo chmod +x /usr/share/applications/foyerApp.desktop
 set +x
 
 echo -e "\n\n${vertfonce}INSTALLATION TERMINEE ${neutre}\n\n"
