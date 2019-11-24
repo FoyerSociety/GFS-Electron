@@ -17,7 +17,7 @@ options = {
 	'args' : [
 				'/usr/bin/electron'
 					if sys.platform == 'linux'
-						else 'electron.cmd' if sys.platform == 'win32'
+						else 'node_modules\electron\dist\electron' if sys.platform == 'win32'
 							else f'{which("electron")}',
 		 '.'] ,
 		

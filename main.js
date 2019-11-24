@@ -22,7 +22,7 @@ function createWindow () {
 		}
 	})
 	  
-  	mainWindow.loadURL('http://localhost:8000/login.html');
+  	mainWindow.loadURL('http://localhost:1903/login.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null
