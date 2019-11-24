@@ -9,7 +9,7 @@ import mysql.connector
 from whichcraft import which
 from datetime import datetime
 
-
+print(os.path.dirname(__file__))
 user, users = '', None
 
 
@@ -233,7 +233,7 @@ def privilege():
 def kill_prog():
 	os.system('netstat -paunt|grep 8000 > .file.tmp')
 
-	val = os.popen('cut -d / -f 1 .file.tmp && rm .file.tmp')
+	val = os.popen('cut -d / -f 1 /tmp/.file.tmp && rm /tmp/.file.tmp')
 	val = val.read()
 	if val != '':
 		val = val.split(' ')[-1][:-1]
