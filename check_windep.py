@@ -1,6 +1,10 @@
 from tkinter import * 
 from tkinter.font import Font 
+<<<<<<< HEAD
 import os, subprocess, sys, threading, pickle
+=======
+import os, subprocess, sys, threading
+>>>>>>> 55964b6fd06347e326d653a564c6a36a57cfcfca
 
 
 class Installation(threading.Thread):
@@ -32,8 +36,12 @@ class Installation(threading.Thread):
             ls = ls.split('\n')
             
             if "jquery" not in ls:
+<<<<<<< HEAD
                 val = subprocess.call('npm i jquery --save ', shell=True)
                 if val == 0:
+=======
+                if subprocess.call("npm i jquery") == 0:
+>>>>>>> 55964b6fd06347e326d653a564c6a36a57cfcfca
                     label_npm['fg'] = 'green'
                     label_npm['text'] = 'succes ✓'
                 else:
@@ -56,11 +64,14 @@ def verify():
 
     if (label_npm['text'] == 'Ok ✓' and label_pip['text'] == 'succes ✓') or ((label_npm['text'] == 'succes ✓' and label_pip['text'] == 'succes ✓')):
         Button(fen, text="Fermer", fg="teal", width=15, height=3, font = Font(size=14), command=fen.quit).pack(pady=10)
+<<<<<<< HEAD
         file = open('check.pickle', 'wb')
         val = True
         check = pickle.dump(val, file)
         file.close()
     
+=======
+>>>>>>> 55964b6fd06347e326d653a564c6a36a57cfcfca
         
 
 def chargement():
