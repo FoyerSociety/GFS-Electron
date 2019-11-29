@@ -22,11 +22,11 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
     
           Ce qui ouvrira au premier temps une fenetre de verification de dependance
     
- - Build from exe
+ - Install executable (79 Mo)
  
-    Une version qui est compressé en *exe* est deja disponible, 
+    Telechargement directe de l'*exe* : 
     
-    En attente de l'upload (77 Mo)
+    https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe
   
   
   ` `
