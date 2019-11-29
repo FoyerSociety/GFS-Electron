@@ -74,6 +74,10 @@ echo -e '#!/bin/bash\ncd /opt/FoyerSociety/\n./foyerApp.py' > foyerApp && chmod 
 chmod +x ./change_env.py 
 ./change_env.py
 chmod +x foyerApp.py
+if [ -e /opt/FoyerSociety ]
+then
+	sudo rm -r /opt/FoyerSociety
+fi
 sudo mkdir /opt/FoyerSociety 
 sudo cp -rf src eel.js env main.js foyerApp.py foyerApp db.linux package.json package-lock.json view /opt/FoyerSociety/
 set +x 
