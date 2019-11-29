@@ -20,8 +20,19 @@ else
 fi
 
 if [ $electron_file = "electron not found" ]; then
-    echo -e "${rougefonce} electron non trouvé ✘\n${neutre} Installer electron\n\n apt-get install electron (basé Debian) \n pacman -S electron (basé Arch) \n  npm i electron -g (Autre)\n"
-    exit
+    echo -e "${rougefonce} electron non trouvé ✘\n${neutre} Installer electron\n\n"
+		echo -e "1: Arch \n2: Autre\n"
+		read -p '[1/2]>> ' distro
+		
+		if [ $distro = 1 ]
+		then
+						sudo pacman -S electron
+		elif [ $distro = 2 ] 
+		then
+						npm install electron
+		else
+					exit
+		fi
 else
     echo -e "${vertfonce} electron trouvé ✓${neutre}"
 fi
