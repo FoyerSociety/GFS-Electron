@@ -16,7 +16,7 @@ options = {
 	'mode' : 'custom',
 
 	'args' : [
-				'/usr/bin/electron'
+				'/usr/bin/electron4'
 					if sys.platform == 'linux'
 						else 'node_modules\electron\dist\electron' if sys.platform == 'win32'
 							else f'{which("electron")}',

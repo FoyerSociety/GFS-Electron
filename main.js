@@ -55,10 +55,10 @@ if (mainWindow === null) createWindow()
 const menu = Menu.buildFromTemplate(
 	[
 		{
-			label: "Fichier",
+			label: "",
 			submenu: [
 				{
-					label: "Fermer la fenetre",
+					label: "Fermer la fenêtre",
 					click: function(){
 						app.quit()
 					}
@@ -66,10 +66,10 @@ const menu = Menu.buildFromTemplate(
 			]
 		},
 		{
-			label: "Edition",
+			label: " ",
 			submenu : [
 				{
-					label: "Mode Sombre",
+					label: "Mode sombre",
 					click: function(){
 						mainWindow.backgroundColor = 'black';
 					}
@@ -77,10 +77,10 @@ const menu = Menu.buildFromTemplate(
 			]
 		},
 		{
-			label: "Apropos"
+			label: ""
 		},
 		{
-			label: "Aide"
+			label: ""
 		}
 	]
 );
