@@ -1,6 +1,6 @@
 {
   "name": "gestionfoyer",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "description": "Une plateforme de gestion du foyer Fsociety",
   "main": "main.js",
   "dependencies": {
@@ -10,7 +10,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "python main.py"
+    "test": "python main.py",
+    "start": "./main.py"
   },
   "repository": {
     "type": "git",
