@@ -1,5 +1,6 @@
 import sys
-import verification
+if sys.platform == "win32":
+	import verification
 import eel
 import os
 import json
