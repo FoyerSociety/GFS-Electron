@@ -107,7 +107,8 @@ sudo ln -sf /opt/FoyerSociety/foyerApp /usr/bin/foyerApp
 sudo cp -f src/foyerApp.desktop /usr/share/applications/
 sudo chmod +x /usr/share/applications/foyerApp.desktop
 set +x
-
+echo -e "#!/bin/bash\nsudo rm -rf /opt/FoyerSociety/ /usr/share/applications/foyerApp.desktop /usr/bin/foyerApp*" > .unin.tmp
+sudo mv .unin.tmp /usr/bin/foyerApp-uninstall
 echo -e "\n\n${vertfonce}INSTALLATION TERMINEE ${neutre}\n\n"
 
 
