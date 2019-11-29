@@ -12,11 +12,20 @@ from datetime import datetime
 
 user, users = '', None
 
+if sys.platform == 'linux':
+	path = '/usr/bin/electron'
+
+elif sys.platform == 'win32':
+	path = r'node_modules\electron\dist\electron'
+
+else:
+	path = which('electron')
+
 options = {
 	'mode' : 'custom',
 
 	'args' : [
-				'/usr/bin/electron4'
+				'/usr/bin/electron'
 					if sys.platform == 'linux'
 						else 'node_modules\electron\dist\electron' if sys.platform == 'win32'
 							else f'{which("electron")}',

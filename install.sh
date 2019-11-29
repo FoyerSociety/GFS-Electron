@@ -29,7 +29,7 @@ if [ $electron_file = "electron not found" ]; then
 						sudo pacman -S electron
 		elif [ $distro = 2 ] 
 		then
-						npm install electron
+						npm install -g electron
 		else
 					exit
 		fi
@@ -58,15 +58,19 @@ sleep 1
 echo -e "\nInstallation dependance npm${neutre}"
 sleep 2
 
-npm_modules=`ls node_modules`
 val="False"
-for dep in $npm_modules
-do
-    if [ $dep = "jquery" ]
-    then
-        val="True"
-    fi
-done
+if [ -e "node_modules" ] && [ -d "node_modules" ]
+then
+    npm_modules=`ls node_modules`
+    for dep in $npm_modules
+    do
+        if [ $dep = "jquery" ]
+        then
+            val="True"
+        fi
+    done
+fi
+
 
 if [ $val = "False" ]
 then
@@ -93,10 +97,7 @@ sudo mkdir /opt/FoyerSociety
 sudo cp -rf src eel.js env main.js foyerApp.py foyerApp db.linux package.json package-lock.json view /opt/FoyerSociety/
 set +x 
 
-if [ -e "node_modules" ] && [ -d "node_modules" ]
-then
-    sudo cp -r node_modules /opt/FoyerSociety/
-fi
+
 
 rm foyerApp foyerApp.py
 
@@ -106,7 +107,8 @@ sudo ln -sf /opt/FoyerSociety/foyerApp /usr/bin/foyerApp
 sudo cp -f src/foyerApp.desktop /usr/share/applications/
 sudo chmod +x /usr/share/applications/foyerApp.desktop
 set +x
-
+echo -e "#!/bin/bash\nsudo rm -rf /opt/FoyerSociety/ /usr/share/applications/foyerApp.desktop /usr/bin/foyerApp*" > .unin.tmp
+sudo mv .unin.tmp /usr/bin/foyerApp-uninstall
 echo -e "\n\n${vertfonce}INSTALLATION TERMINEE ${neutre}\n\n"
 
 
