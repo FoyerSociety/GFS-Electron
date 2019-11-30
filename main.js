@@ -8,11 +8,11 @@ let mainWindow;
 
 function createWindow () {
 	mainWindow = new BrowserWindow({
-		width: 1100,
-		height: 660,
+		width: 972,
+		height: 585,
 		center: true,
-		maxWidth: 1100,
-		minWidth: 1100,
+		maxWidth: 972,
+		minWidth: 972,
 		maxHeight: haut,
 		minHeight: haut,
 		icon: __dirname + icon,
@@ -30,11 +30,11 @@ function createWindow () {
 }
 
 if (process.platform.toLowerCase()  == 'win32'){
-	haut  = 680
+	haut  = 605
 	icon = `/src/foyer.ico`
 }
 else{
-	haut = 660
+	haut = 585
 	icon = `/src/foyer.png`
 }
 
