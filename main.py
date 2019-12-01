@@ -64,7 +64,7 @@ def setUsers(val):
 
  
 def main():
-	eel.start('login.html',  options=options)
+	eel.start('budget.html',  options=options)
 
 
 @eel.expose
