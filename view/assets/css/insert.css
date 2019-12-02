@@ -193,11 +193,11 @@
 
 	
 	
-	
 	.buttons{
 		margin-top:2%;
 		margin-left:1%;
 	}
+	
 
 	.btnh{
 		padding:7px;
@@ -208,6 +208,7 @@
 		font-weight:bold;
 		margin-bottom:1.4%;
 		border-radius:20px;
+		cursor:pointer;
 	}
 
 	.sidebar-divider{
@@ -232,6 +233,34 @@
 	@-moz-keyframes pulse {to {box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);}}
 	@-ms-keyframes pulse {to {box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);}}
 	@keyframes pulse {to {box-shadow: 0 0 0 15px rgba(232, 76, 61, 0);}}
+
+	.dropcompte{
+		position:fixed !important;
+		top:15% !important;
+		left:27% !important;
+		background-color:#020e18 !important;
+	}
+	.dropass{
+		position:fixed !important;
+		top:15% !important;
+		left:73% !important;
+		background-color:#020e18 !important;
+	}
+	.ditemc{
+		font-size:12.5px;
+		color:#fff !important;
+	}
+	.ditemc:hover{
+		color:#020e18 !important;
+	}
+	.buttons-membre{
+		margin-left:27% !important;
+    }
+	.buttons-ass{
+		position:fixed;
+		left:52%;
+		top:9.3%;
+	}
 
 	.cot, .dep, .jir, .det, .stat, .hist{
 		margin-left:4%;

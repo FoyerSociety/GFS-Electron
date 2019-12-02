@@ -22,7 +22,7 @@ function createWindow () {
 		}
 	})
 	  
-  	mainWindow.loadURL('http://localhost:1903/budget.html');
+  	mainWindow.loadURL('http://localhost:1903/membre.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null
