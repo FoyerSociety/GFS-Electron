@@ -126,13 +126,19 @@
 
 
 	
+	.lact{
+		background-color:#1b1c27 !important;
+	}
+	.lact:hover{
+		background-color:#1b1c27 !important;
+	}
 	.classacc{
 		padding-bottom:0px !important;
 		height:15.5%;
 		transition-duration:0.5s;
 	}
 	.classacc:hover{
-		background-color:#20212e !important;
+		background-color:#20212e;
 		transition-duration:0.5s;
 	}
 	.classbud{
@@ -142,7 +148,7 @@
 		transition-duration:0.5s;
 	}
 	.classbud:hover{
-		background-color:#20212e !important;
+		background-color:#20212e;
 	}
 	.classrps{
 		padding-top:6px !important;
@@ -151,7 +157,7 @@
 		transition-duration:0.5s;
 	}
 	.classrps:hover{
-		background-color:#20212e !important;
+		background-color:#20212e;
 	}
 	.classmng{
 		padding-top:6px !important;
@@ -160,7 +166,7 @@
 		transition-duration:0.5s;
 	}
 	.classmng:hover{
-		background-color:#20212e !important;
+		background-color:#20212e;
 	}
 	.classmbr{
 		padding-top:17px !important;
@@ -169,7 +175,7 @@
 		transition-duration:0.5s;
 	}
 	.classmbr:hover{
-		background-color:#20212e !important;
+		background-color:#20212e;
 	}
 
 
