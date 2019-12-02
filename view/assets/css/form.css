@@ -112,8 +112,11 @@ iframe {
 
 .wrap-login100 {
   width: 90%;
+  margin-left: 1.5%;
+  margin-bottom:-2%;
+  position: fixed;
+  top:190px;
 }
-
 
 /*------------------------------------------------------------------
 [ Form ]*/
@@ -124,12 +127,11 @@ iframe {
   border-radius: 10px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   padding: 50px;
-  margin-left: 2%;
-  margin-top: 5%;
 }
 
 .cotisation{
   margin-left: 8% !important;
+  margin-bottom: 10% !important;
 }
 
 .login100-form-title {
