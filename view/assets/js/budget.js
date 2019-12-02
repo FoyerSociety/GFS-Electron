@@ -69,3 +69,60 @@ function set_privilege(val){
 
 
 eel.privilege()(set_privilege)
+
+
+function html1(){
+    let hk1 = `
+    <div class="buttons">
+        <span class="cot" onclick="window.location='budget.html'"><button class="btnh"><i class="fa fa-bars"></i> Cotisation</button></span>
+        <span class="dep" onclick="window.location='depense.html'" ><button class="btnh pulse-button"><i class="fa fa-bars"></i> Dépense</button></span>
+        <span class="jir" onclick="window.location='jirama.html'"><button class="btnh" ><i class="fa fa-bars"></i> Jirama</button></span>
+        <span class="det" onclick="window.location='dette.html'"><button class="btnh" ><i class="fa fa-bars"></i> Dette</button></span>
+        <span class="stat" onclick="window.location='statistique.html'"><button class="btnh" ><i class="fa fa-bars"></i> Statistique</button></span>
+        <span class="hist" onclick="window.location='historique.html'"><button class="btnh" ><i class="fa fa-bars"></i> Historique</button></span>
+    </div>
+    <hr class="sidebar-divider">
+    <div class="wrap-login100 p-t-85 p-b-20">
+        <form class="login100-form validate-form depense" >
+            <span class="login100-form-title p-b-70">
+                Dépense
+            </span>
+
+            <div class="entrer wrap-input100 validate-input m-t-85 m-b-35 userlog">
+                    <input class="user_input input100 info1" type="text" list="dataMember">
+                    <span class="focus-input100" data-placeholder="User"></span>
+                    <datalist id="dataMember">
+                        <!--Ici se place les suggesions de prenoms -->
+                    </datalist>
+            </div>
+
+            <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
+                <input class="date_input input100 info2" type="date">
+            </div>
+
+
+            <div class="entrer wrap-input100 validate-input m-b-50 moilog" >
+                <input class="somme_input input100 info2" type="text">
+                <span class="focus-input100" data-placeholder="Somme"></span>
+            </div>
+
+            <div class="entrer wrap-input100 validate-input m-b-50 analog" >
+                <input class="motif_input input100 info2" type="text" list="motif_suggest">
+                <span class="focus-input100" data-placeholder="Motifs"></span>
+                <datalist id="motif_suggest">
+                    <option> Repas </option>
+                    <option> Charbon </option>
+                    <option> Grand Menage </option>
+                    <option> Fête </option>
+                </datalist>
+            </div>
+
+            <div class="container-login100-form-btn">
+                <button disabled='disabled'  title="✘ Vous n'êtes pas autorisé ✘" class="addDepbtn private login100-form-btn" type="button" onclick=addDepense($(this))>
+                    <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
+                </button>
+            </div>
+        </form>
+    </div>`;
+    $('.container-fluid').html(hk1);
+}
