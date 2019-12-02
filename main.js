@@ -22,7 +22,7 @@ function createWindow () {
 		}
 	})
 	  
-  	mainWindow.loadURL('http://localhost:1903/ajoutcompte.html');
+  	mainWindow.loadURL('http://localhost:1903/supcompte.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null
