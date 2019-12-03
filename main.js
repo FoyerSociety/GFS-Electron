@@ -1,7 +1,7 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
-const debug = require('electron-debug');
-debug();
+//const debug = require('electron-debug');
+//debug();
 
 let mainWindow;
 
@@ -9,7 +9,7 @@ let mainWindow;
 function createWindow () {
 	mainWindow = new BrowserWindow({
 		width: 972,
-		height: 585,
+		height: haut,
 		center: true,
 		maxWidth: 972,
 		minWidth: 972,
@@ -21,8 +21,8 @@ function createWindow () {
 			nodeIntegration: true
 		}
 	})
-	  
-  	mainWindow.loadURL('http://localhost:1903/asscoti.html');
+
+  	mainWindow.loadURL('http://localhost:1903/main.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null
