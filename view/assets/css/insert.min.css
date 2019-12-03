@@ -180,15 +180,18 @@
 
 
 	.isearch{
-		margin-left:-10% !important;
-		margin-top:4%;
+		margin-left:-45% !important;
+		margin-top:5.8%;
 		height:33px;
-		width:450px;
+		width:300px;
 		border-radius:4px;
-		color:#fff;
-		background-color: #020e18;
+		color:#0e1419;
+		background-color: #e3e9ee;
 		font-size:13px;
 		padding-left:15px;
+	}
+	.icosearch{
+		color: #0e1419 !important;
 	}
 
 	
@@ -249,6 +252,7 @@
 	.ditemc{
 		font-size:12.5px;
 		color:#fff !important;
+		cursor:pointer !important;
 	}
 	.ditemc:hover{
 		color:#020e18 !important;

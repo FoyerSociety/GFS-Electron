@@ -22,7 +22,7 @@ function createWindow () {
 			nodeIntegration: true
 		}
 	})
-  	mainWindow.loadURL('http://localhost:1903/login.html');
+  	mainWindow.loadURL('http://localhost:1903/main.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null
