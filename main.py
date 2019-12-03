@@ -13,7 +13,7 @@ from datetime import datetime
 user, users = '', None
 
 if sys.platform == 'linux':
-	path = '/usr/bin/electron'
+	path = '/usr/bin/electron4'
 
 elif sys.platform == 'win32':
 	path = r'node_modules\electron\dist\electron'
@@ -24,12 +24,7 @@ else:
 options = {
 	'mode' : 'custom',
 
-	'args' : [
-				'/usr/bin/electron4'
-					if sys.platform == 'linux'
-						else 'node_modules\electron\dist\electron' if sys.platform == 'win32'
-							else f'{which("electron")}',
-		 '.'] ,
+	'args' : [path, '.'] ,
 
 	'port' : 1903
 }
@@ -65,6 +60,7 @@ def setUsers(val):
 
 @eel.expose
 def login(usr, passwd):
+	passwd = hashlib.sha1(passwd.encode()).hexdigest()
 	try:
 		db = database()
 	except:
@@ -236,6 +232,29 @@ def kill_prog():
 	if val != '':
 		val = val.split(' ')[-1][:-1]
 		os.system(f'kill -9 {val}')
+
+
+@eel.expose
+def passwd(usr, password):
+	# fonction pour changer de mot de passe user
+	password = hashlib.sha1(password.encode()).hexdigest()
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	else:
+		cursor = db.cursor()
+
+	try:
+		print(usr)
+		cursor.execute("UPDATE Membre SET password=%s WHERE username=%s", (password, usr))
+		db.commit()
+		return True
+	except:
+		db.rollback()
+		print('here here')
+		return False
 
 
 def main():
