@@ -276,8 +276,16 @@ def addUser(usr, password):
 
 
 @eel.expose
-def delUser(usr):
-	password = hashlib.sha1(password.encode()).hexdigest()
+def delUser(usr, passwd):
+	global user
+	val = login(user, passwd)
+
+	if val == True:
+		pass
+	else:
+		eel.afficher(val)
+		return None 
+
 	try:
 		db = database()
 	except:

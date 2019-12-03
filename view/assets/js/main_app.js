@@ -343,7 +343,7 @@ function membre_ajouter(){
 
 function membre_supprimer(){
   let html = `<div class="wrap-login100 p-t-85 p-b-20 formdc">
-    <form class="cotisation login100-form validate-form">
+    <form class="supprimer login100-form validate-form">
     <span class="login100-form-title p-b-70">
     Supprimer un compte
     </span>
@@ -356,12 +356,12 @@ function membre_supprimer(){
                       </div>
 
                       <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
-                              <input class="somme_input input100 info2" type="text">
+                              <input class="password_input input100 info2" type="password">
                               <span class="focus-input100" data-placeholder="Mot de passe"></span>
                       </div>
 
     <div class="container-login100-form-btn">
-    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=addCotisation($(this))>
+    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=supprimer($(this))>
     <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
     </button>
     </div>
