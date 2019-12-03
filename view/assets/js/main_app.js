@@ -314,19 +314,17 @@ function membre_ajouter(){
     </span>
 
     <div class="entrer wrap-input100 validate-input m-t-85 m-b-35 userlog" >
-    <input class="user_input input100 info1" type="text" list="dataMember">
+    <input class="user_input input100 info1" type="text">
     <span class="focus-input100" data-placeholder="User"></span>
-    <datalist id="dataMember">
-    </datalist>
     </div>
 
     <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
-    <input class="somme_input input100 info2" type="text">
+    <input class="password_input input100 info2" type="password">
     <span class="focus-input100" data-placeholder="Mot de passe"></span>
     </div>
 
     <div class="container-login100-form-btn">
-    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=addCotisation($(this))>
+    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=add_member($(this))>
     <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
     </button>
     </div>
@@ -338,6 +336,7 @@ function membre_ajouter(){
     $('.container-fluid').append(html);
     $('.submenu_acc').addClass('pulse-button');
     decore_input();
+    eel.privilege(set_privilege);
 
 }
 
