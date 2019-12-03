@@ -94,10 +94,12 @@ then
 	sudo rm -r /opt/FoyerSociety
 fi
 sudo mkdir /opt/FoyerSociety 
-sudo cp -rf src eel.js env main.js foyerApp.py foyerApp db.linux package.json package-lock.json view /opt/FoyerSociety/
+sudo cp -rf src eel.js env main.js foyerApp.py foyerApp db.linux package* view /opt/FoyerSociety/
 set +x 
 
-
+if [ -e "node_modules" ] && [ -d "node_modules" ]; then
+    sudo cp -r node_modules /opt/FoyerSociety
+fi
 
 rm foyerApp foyerApp.py
 
