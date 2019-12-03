@@ -1,6 +1,6 @@
 async function addCotisation(rpr){
     let frmp = rpr.parents('.cotisation');
-    
+
     let user = frmp.find('.user_input').val();
     let somme = frmp.find('.somme_input').val();
     let mois = frmp.find('.mois_input').val();
@@ -13,7 +13,7 @@ async function addCotisation(rpr){
 function feedCot(feed_back){
     let btnval= "<i class='fa fa-angle-right'> <span class='text-btn'>VALIDER</span> </i>";
     $('.addCotbtn').html(btnval);
-    
+
     if (feed_back == 1){
         $('.loading-img-cot').html('');
         alert('La transaction a reussi');
@@ -47,25 +47,3 @@ function fedDep(val){
         alert('La Transaction a echoué');
     }
 }
-
-
-
-function set_privilege(val){
-
-    if (val == 'su'){
-        $('.private').each(function(){
-            $(this).removeAttr('disabled');
-            $(this).removeAttr('title');
-        });
-    }
-    else{
-        $('.private').each(function(){
-            $(this).attr('disabled', 'disabled');
-
-        });
-    }
-
-}
-
-
-eel.privilege()(set_privilege)
