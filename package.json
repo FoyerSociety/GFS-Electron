@@ -5,12 +5,13 @@
   "main": "main.js",
   "dependencies": {
     "electron": "^7.1.1",
+    "electron-debug": "^3.0.1",
     "jquery": "^3.4.1"
   },
   "devDependencies": {},
   "scripts": {
     "test": "python main.py",
-    "start": "./main.py"
+    "start": "env/bin/python main.py"
   },
   "repository": {
     "type": "git",
