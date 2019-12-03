@@ -18,3 +18,4 @@ function setUser(val){
 
 
 eel.getUser()(setUser);
+

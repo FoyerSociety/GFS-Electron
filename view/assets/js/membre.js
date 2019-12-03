@@ -22,14 +22,16 @@ function return_passwd(feed_back){
 }
 
 
-function add_member(rpr){
-    let frmp = rpr.parents('.modifier');
+async function add_member(rpr){
+    let frmp = rpr.parents('.ajouter');
 
     let user = frmp.find('.user_input').val();
     let pass = frmp.find('.password_input').val();
     $('.addCotbtn').html("<img src='assets/img/loading-white.gif'>");
+ 
     await eel.addUser(user, pass)(return_addUser);
 }
+
 
 function return_addUser(feed_back){
     let btnval= "<i class='fa fa-angle-right'> <span class='text-btn'>VALIDER</span> </i>";

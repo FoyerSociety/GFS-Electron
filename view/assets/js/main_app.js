@@ -308,7 +308,7 @@ function membre_modifier(){
 function membre_ajouter(){
   let html = `
       <div class="wrap-login100 p-t-85 p-b-20 formdc">
-    <form class="cotisation login100-form validate-form">
+    <form class="ajouter login100-form validate-form">
     <span class="login100-form-title p-b-70">
     Ajouter un compte
     </span>
@@ -336,7 +336,7 @@ function membre_ajouter(){
     $('.container-fluid').append(html);
     $('.submenu_acc').addClass('pulse-button');
     decore_input();
-    eel.privilege(set_privilege);
+    eel.privilege()(set_privilege);
 
 }
 
@@ -373,6 +373,7 @@ function membre_supprimer(){
   $('.submenu_acc').addClass('pulse-button');
   decore_input();
   eel.getMember()(suggestMember);
+  eel.privilege()(set_privilege);
 }
 
 

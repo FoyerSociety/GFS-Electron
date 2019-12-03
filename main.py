@@ -256,7 +256,7 @@ def passwd(usr, password):
 
 
 @eel.expose
-def addUser(usr, passwd):
+def addUser(usr, password):
 	password = hashlib.sha1(password.encode()).hexdigest()
 	try:
 		db = database()
@@ -267,7 +267,27 @@ def addUser(usr, passwd):
 		cursor = db.cursor()
 
 	try:
-		cursor.execute("INSERT INTO Membre(username, password) VALUES(%s, %s)", (password, usr))
+		cursor.execute("INSERT INTO Membre(username, password) VALUES(%s, %s)", (usr.lower(), password))
+		db.commit()
+		return True
+	except:
+		db.rollback()
+		return False
+
+
+@eel.expose
+def delUser(usr):
+	password = hashlib.sha1(password.encode()).hexdigest()
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	else:
+		cursor = db.cursor()
+	
+	try:
+		cursor.execute("DELETE FROM Membre Where username=%s", (usr,))
 		db.commit()
 		return True
 	except:
