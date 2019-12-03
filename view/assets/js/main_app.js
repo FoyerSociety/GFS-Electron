@@ -1,5 +1,21 @@
-function budget_menu(){
+function remove_lact(){
+  // mamafa class active an le menu sidebar
+  $('#accordionSidebar li').each(function(){
+    $(this).removeClass('lact');
+  });
+}
 
+
+function remove_pulse(){
+  // mamafa an le pulse button rehetra
+  $('.buttons').find('button').each(function(){
+    $(this).removeClass('pulse-button');
+  });
+}
+
+
+function budget_menu(){
+  remove_lact();
   let html = `<div class="buttons">
       <span id='budget_cotisation' class="cot" onclick="budget_cotisation()"><button class="btnh"><i class="fa fa-bars"></i> Cotisation</button></span>
       <span id='budget_depense' class="dep" onclick="budget_depense()" ><button class="btnh"><i class="fa fa-bars"></i> Dépense</button></span>
@@ -11,7 +27,6 @@ function budget_menu(){
     <hr class="sidebar-divider">`;
 
   $('.container-fluid').html(html);
-  $('#accueil_button').removeClass('lact');
   $('#budget_button').addClass('lact');
 
 }
@@ -155,8 +170,200 @@ function budget_history(){
 }
 
 
-function remove_pulse(){
-  $('.buttons').find('button').each(function(){
-    $(this).removeClass('pulse-button');
-  })
+function membre_menu(){
+  remove_lact();
+  let html = `
+  <li class="nav-item dropdown no-arrow mx-1">
+          <div class="buttons buttons-membre">
+            <span class="dep" data-toggle="dropdown"><button class="btnh submenu_acc pulse-button"><i class="fa fa-bars"></i> Comptes</button></span>
+            <!-- Dropdown - Alerts -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow dropcompte">
+              <a class="dropdown-item d-flex align-items-center ditemc" onclick="membre_modifier()">
+                Modifier un compte
+              </a>
+              <a class="dropdown-item d-flex align-items-center ditemc " onclick="membre_ajouter()">
+                Ajouter un un compte
+              </a>
+              <a class="dropdown-item d-flex align-items-center ditemc" onclick="membre_supprimer()">
+                Supprimer un compte
+              </a>
+              <a class="dropdown-item d-flex align-items-center ditemc" onclick="membre_list()">
+                Liste des membres
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown no-arrow mx-1" onclick="assign_cotisation()">
+          <div class="buttons buttons-ass">
+              <span class="dep" data-toggle="dropdown"><button class="submenu_cot btnh"><i class="fa fa-bars"></i> Assignation cotisation</button></span>
+          </div>
+        </li>
+
+  <hr class="sidebar-divider">`;
+
+  $('.container-fluid').html(html);
+  $('#membre_button').addClass('lact');
+  remove_pulse();
+}
+
+
+function membre_modifier(){
+
+  let html = `
+    <div class="wrap-login100 p-t-85 p-b-20 formdc">
+      <form class="cotisation login100-form validate-form">
+        <span class="login100-form-title p-b-70">
+          Changer le mot de passe
+        </span>
+
+    <div class="entrer wrap-input100 validate-input m-t-85 m-b-35 userlog" >
+    <input class="user_input input100 info1" type="text" list="dataMember">
+    <span class="focus-input100" data-placeholder="User"></span>
+    <datalist id="dataMember">
+    </datalist>
+    </div>
+
+    <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
+    <input class="somme_input input100 info2" type="text">
+    <span class="focus-input100" data-placeholder="Nouveau mot de passe"></span>
+    </div>
+
+    <div class="container-login100-form-btn">
+    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=addCotisation($(this))>
+    <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
+    </button>
+    </div>
+
+    </form>
+    </div>`;
+
+    membre_menu();
+    $('.container-fluid').append(html);
+    $('.submenu_acc').addClass('pulse-button');
+
+}
+
+
+function membre_ajouter(){
+  let html = `
+      <div class="wrap-login100 p-t-85 p-b-20 formdc">
+    <form class="cotisation login100-form validate-form">
+    <span class="login100-form-title p-b-70">
+    Ajouter un compte
+    </span>
+
+    <div class="entrer wrap-input100 validate-input m-t-85 m-b-35 userlog" >
+    <input class="user_input input100 info1" type="text" list="dataMember">
+    <span class="focus-input100" data-placeholder="User"></span>
+    <datalist id="dataMember">
+    </datalist>
+    </div>
+
+    <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
+    <input class="somme_input input100 info2" type="text">
+    <span class="focus-input100" data-placeholder="Mot de passe"></span>
+    </div>
+
+    <div class="container-login100-form-btn">
+    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=addCotisation($(this))>
+    <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
+    </button>
+    </div>
+
+    </form>
+    </div>`;
+
+    membre_menu();
+    $('.container-fluid').append(html);
+    $('.submenu_acc').addClass('pulse-button');
+
+}
+
+
+function membre_supprimer(){
+  let html = `<div class="wrap-login100 p-t-85 p-b-20 formdc">
+    <form class="cotisation login100-form validate-form">
+    <span class="login100-form-title p-b-70">
+    Supprimer un compte
+    </span>
+
+    <div class="entrer wrap-input100 validate-input m-t-85 m-b-35 userlog" >
+    <input class="user_input input100 info1" type="text" list="dataMember">
+    <span class="focus-input100" data-placeholder="User"></span>
+    <datalist id="dataMember">
+    </datalist>
+                      </div>
+
+                      <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
+                              <input class="somme_input input100 info2" type="text">
+                              <span class="focus-input100" data-placeholder="Mot de passe"></span>
+                      </div>
+
+    <div class="container-login100-form-btn">
+    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=addCotisation($(this))>
+    <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
+    </button>
+    </div>
+
+    </form>
+    </div>`;
+  membre_menu();
+  $('.container-fluid').append(html);
+  $('.submenu_acc').addClass('pulse-button');
+}
+
+
+function membre_list(){
+    membre_menu();
+    $('.submenu_acc').addClass('pulse-button');
+}
+
+
+function assign_cotisation(){
+  let html = `                                        <div class="wrap-login100 p-t-85 p-b-20">
+                                                  <form class="cotisation login100-form validate-form">
+                                                          <span class="login100-form-title p-b-70">
+                                                                  Cotisation par mois
+                                                          </span>
+
+                                                          <div class="entrer wrap-input100 validate-input m-t-85 m-b-35 userlog" >
+                                                                  <input class="user_input input100 info1" type="text" list="dataMember">
+                                                                  <span class="focus-input100" data-placeholder="User"></span>
+                                                                  <datalist id="dataMember">
+                                                                  </datalist>
+                                                          </div>
+
+                                                          <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
+                                                                  <input class="somme_input input100 info2" type="text">
+                                                                  <span class="focus-input100" data-placeholder="Somme"></span>
+                                                          </div>
+
+                                                          <div class="entrer wrap-input100 validate-input m-b-50 moilog" >
+                                                                  <input class="mois_input input100 info2" type="text" list="dataMonth">
+                                                                  <span class="focus-input100" data-placeholder="Mois"></span>
+                                                                  <datalist id="dataMonth">
+                                                                          <!-- Ici se place les 12 mois de l'année -->
+                                                                  </datalist>
+                                                          </div>
+
+                                                          <div class="entrer wrap-input100 validate-input m-b-50 analog" >
+                                                                  <input class="annee_input input100 info2" type="text" list="dataYear">
+                                                                  <span class="focus-input100" data-placeholder="Année"></span>
+                                                                  <datalist id="dataYear">
+                                                                          <!-- Ici se place 10 années -->
+                                                                  </datalist>
+                                                          </div>
+
+                                                          <div class="container-login100-form-btn">
+                                                                  <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=addCotisation($(this))>
+                                                                          <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
+                                                                  </button>
+                                                          </div>
+
+                                                  </form>
+  					</div>`;
+    membre_menu();
+    $('.container-fluid').append(html);
+    $('.submenu_cot').addClass('pulse-button');
 }
