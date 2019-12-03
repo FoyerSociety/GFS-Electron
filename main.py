@@ -30,7 +30,7 @@ options = {
 						else 'node_modules\electron\dist\electron' if sys.platform == 'win32'
 							else f'{which("electron")}',
 		 '.'] ,
-		
+
 	'port' : 1903
 }
 
@@ -62,9 +62,9 @@ def setUsers(val):
 	global users
 	users = val
 
- 
+
 def main():
-	eel.start('budget.html',  options=options)
+	eel.start('main.html',  options=options)
 
 
 @eel.expose
