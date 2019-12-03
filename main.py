@@ -63,10 +63,6 @@ def setUsers(val):
 	users = val
 
 
-def main():
-	eel.start('main.html',  options=options)
-
-
 @eel.expose
 def login(usr, passwd):
 	try:
@@ -241,6 +237,9 @@ def kill_prog():
 		val = val.split(' ')[-1][:-1]
 		os.system(f'kill -9 {val}')
 
+
+def main():
+	eel.start('login.html',  options=options)
 
 
 if __name__ == '__main__':

@@ -1,3 +1,51 @@
+function set_privilege(val){
+
+    if (val == 'su'){
+        $('.private').each(function(){
+            $(this).removeAttr('disabled');
+            $(this).removeAttr('title');
+        });
+    }
+    else{
+        $('.private').each(function(){
+            $(this).attr('disabled', 'disabled');
+
+        });
+    }
+
+}
+
+
+function get_dataDate(){
+  let Month = new Array('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
+
+  for (let i=0; i<Month.length; i++){
+      let mois = '<option>' + Month[i] + '</option>';
+      $('#dataMonth').append(mois);
+
+      // ci dessus une simple incrementation d'année
+      if (i < 5){
+        let year = 2019 + i;
+        $('#dataYear').append('<option>' + year + '</option>' );
+      }
+  }
+}
+
+
+function decore_input(){
+  // fonction midecore an le input
+  $('.input100').each(function(){
+      $(this).on('blur', function(){
+          if($(this).val().trim() != "") {
+              $(this).addClass('has-val');
+          }
+          else {
+              $(this).removeClass('has-val');
+          }
+      })
+  });
+}
+
 function remove_lact(){
   // mamafa class active an le menu sidebar
   $('#accordionSidebar li').each(function(){
@@ -85,6 +133,10 @@ function budget_cotisation(){
   </div>`;
 
   $('.container-fluid').append(html);
+  decore_input();
+  eel.getMember()(suggestMember);
+  eel.privilege()(set_privilege);
+  get_dataDate();
 }
 
 
@@ -123,6 +175,8 @@ function budget_depense(){
         <datalist id="motif_suggest">
           <option> Repas </option>
           <option> Charbon </option>
+          <option> Huile </option>
+          <option> Sel </option>
           <option> Grand Menage </option>
           <option> Fête </option>
         </datalist>
@@ -137,6 +191,9 @@ function budget_depense(){
   </div>`;
 
   $('.container-fluid').append(html);
+  decore_input();
+  eel.getMember()(suggestMember);
+  eel.privilege()(set_privilege);
 
 
 }
@@ -241,6 +298,8 @@ function membre_modifier(){
     membre_menu();
     $('.container-fluid').append(html);
     $('.submenu_acc').addClass('pulse-button');
+    decore_input();
+    eel.getMember()(suggestMember);
 
 }
 
@@ -277,6 +336,7 @@ function membre_ajouter(){
     membre_menu();
     $('.container-fluid').append(html);
     $('.submenu_acc').addClass('pulse-button');
+    decore_input();
 
 }
 
@@ -311,6 +371,8 @@ function membre_supprimer(){
   membre_menu();
   $('.container-fluid').append(html);
   $('.submenu_acc').addClass('pulse-button');
+  decore_input();
+  eel.getMember()(suggestMember);
 }
 
 
@@ -351,7 +413,6 @@ function assign_cotisation(){
                                                                   <input class="annee_input input100 info2" type="text" list="dataYear">
                                                                   <span class="focus-input100" data-placeholder="Année"></span>
                                                                   <datalist id="dataYear">
-                                                                          <!-- Ici se place 10 années -->
                                                                   </datalist>
                                                           </div>
 
@@ -366,4 +427,10 @@ function assign_cotisation(){
     membre_menu();
     $('.container-fluid').append(html);
     $('.submenu_cot').addClass('pulse-button');
+    decore_input();
+    eel.getMember()(suggestMember);
+    $('#dataMember').append(`<option>foyer<option>`);
+    get_dataDate();
+
+
 }

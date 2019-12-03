@@ -13,10 +13,10 @@
             else {
                 $(this).removeClass('has-val');
             }
-        })    
+        })
     })
-  
-  
+
+
     /*==================================================================
     [ Validate ]*/
     var input = $('.validate-input .input100');
@@ -65,8 +65,8 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
-    
+
+
 })(jQuery);
 
 
@@ -80,13 +80,12 @@ async function login(){
 function validateLogin(response){
     if (response == true){
         eel.setUser($('#username').val());
-        window.location ='budget.html';
+        window.location ='main.html';
     }
     else{
         let error = `<p>  ${response} </p>`;
         $('.alert-danger').html(error);
         $('.loading-img').html('');
     }
-    
-}
 
+}
