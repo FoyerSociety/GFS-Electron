@@ -268,7 +268,7 @@ function membre_menu(){
 function membre_modifier(){
 
   let html = `
-    <div class="wrap-login100 p-t-85 p-b-20 formdc">
+    <div class="wrap-login100 p-t-85 p-b-20 formdc" style="margin-left:8.7% !important;">
       <form class="modifier login100-form validate-form">
         <span class="login100-form-title p-b-70">
           Changer le mot de passe
