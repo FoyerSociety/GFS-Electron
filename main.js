@@ -1,7 +1,6 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
-// const debug = require('electron-debug');
-// debug();
+const debug = require('electron-debug');
 
 let mainWindow;
 
@@ -9,7 +8,7 @@ let mainWindow;
 function createWindow () {
 	mainWindow = new BrowserWindow({
 		width: 972,
-		height: haut,
+		height: 585,
 		center: true,
 		maxWidth: 972,
 		minWidth: 972,
@@ -23,7 +22,7 @@ function createWindow () {
 		}
 	})
 	  
-  	mainWindow.loadURL('http://localhost:1903/main.html');
+  	mainWindow.loadURL('http://localhost:1903/login.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null

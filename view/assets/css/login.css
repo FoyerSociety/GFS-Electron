@@ -40,48 +40,51 @@
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
-* {
-	margin: 0px; 
-	padding: 0px; 
-	box-sizing: border-box;
-}
 
 body, html {
 	height: 100%;
   font-family: Poppins-Regular, sans-serif !important;
 }
 
-/*---------------------------------------------*/
-a {
-	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+.mainbody{
+  background-color: #232533;
 }
 
-a:focus {
-	outline: none !important;
+.loginform{
+  background-color:red;
+  text-align: center;
+  width: 30%;
+  height:49%;
+}
+h4{
+  padding-top: 7%;;
 }
 
-a:hover {
-	text-decoration: none;
-  color: #333333;
+.username{
+   margin-top: 17%;
+    height:33px;
+		width:65%;
+		border-radius:4px;
+		color:#fff;
+		background-color: #020e18;
+		font-size:13px;
+		padding-left:15px;
 }
 
-/*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
+.passwd{
+    margin-top: 6%;
+    margin-left: -1%;
+    height:33px;
+		width:65%;
+		border-radius:4px;
+		color:#fff;
+		background-color: #020e18;
+		font-size:13px;
+		padding-left:15px;
 }
 
-p {
-	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
+.valider{
+  position: absolute;
+  top: 43%;
+  left:12%;
 }
