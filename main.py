@@ -247,13 +247,31 @@ def passwd(usr, password):
 		cursor = db.cursor()
 
 	try:
-		print(usr)
 		cursor.execute("UPDATE Membre SET password=%s WHERE username=%s", (password, usr))
 		db.commit()
 		return True
 	except:
 		db.rollback()
-		print('here here')
+		return False
+
+
+@eel.expose
+def addUser(usr, passwd):
+	password = hashlib.sha1(password.encode()).hexdigest()
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	else:
+		cursor = db.cursor()
+
+	try:
+		cursor.execute("INSERT INTO Membre(username, password) VALUES(%s, %s)", (password, usr))
+		db.commit()
+		return True
+	except:
+		db.rollback()
 		return False
 
 
