@@ -4,32 +4,32 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
 ## Installation
 
-### LINUX 
+### LINUX
 
 `$ git clone https://github.com/FoyerSociety/GestionFoyer.git`
- 
+
 `$ cd GestionFoyer && ./install.sh`
 
 
-### Windows 
+### Windows
 - Build from source
-  
+
   ` git clone https://github.com/FoyerSociety/GestionFoyer.git`
-  
+
     * Installer nodejs
-    * Installer electron (avec npm) `npm install electron `
-    * python main.py 
-    
+    * Installer electron (avec npm) `npm install electron`
+    * python main.py
+
           Ce qui ouvrira au premier temps une fenetre de verification de dependance
-    
+
  - Install executable
- 
+
      [**Download Windows Executable (79 Mo)**](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
-    
-    
 
 
-## DEVELOPPEURS
+
+
+## Developpeurs
 <table>
  <tr>
     <td align="center"><a href="gaetan1903.github.com"><img src="https://avatars0.githubusercontent.com/u/43904633?s=460&v=4" width="150px;" height="150px;" alt="Gaetan Jonathan"/> </td>
@@ -40,4 +40,3 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
   <td> Landry Daniel :smiley: </td>
  </tr>
 </table>
-  

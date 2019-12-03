@@ -269,7 +269,7 @@ function membre_modifier(){
 
   let html = `
     <div class="wrap-login100 p-t-85 p-b-20 formdc">
-      <form class="cotisation login100-form validate-form">
+      <form class="modifier login100-form validate-form">
         <span class="login100-form-title p-b-70">
           Changer le mot de passe
         </span>
@@ -282,12 +282,12 @@ function membre_modifier(){
     </div>
 
     <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
-    <input class="somme_input input100 info2" type="text">
+    <input class="password_input input100 info2" type="password">
     <span class="focus-input100" data-placeholder="Nouveau mot de passe"></span>
     </div>
 
     <div class="container-login100-form-btn">
-    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=addCotisation($(this))>
+    <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=password_change($(this))>
     <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
     </button>
     </div>
@@ -300,6 +300,7 @@ function membre_modifier(){
     $('.submenu_acc').addClass('pulse-button');
     decore_input();
     eel.getMember()(suggestMember);
+    eel.privilege()(set_privilege);
 
 }
 
