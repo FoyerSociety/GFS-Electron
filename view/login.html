@@ -5,56 +5,24 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="images"/>
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
 	<script> window.jQuery =  window.$ = require('jquery'); </script>
 	<script src="/eel.js"></script>
 	
 </head>
-	<body>
+	<body >
 	
-		<div class="limiter">
-			<div class="container-login100">
-				<div class="wrap-login100 p-t-85 p-b-20">
-					<form  class="login100-form validate-form">
-						<span class="login100-form-title p-b-70">
-							Bienvenue
-						</span>
+		<form>
+			<h4> Se connecter</h4>
+			<input class="username" id="username" list="dataMember">
+			<span><i class="fa fa-user"></i></span>
+			<datalist id="dataMember"></datalist>
+			<input class="passwd" id="passwd" list="dataMember">
+			<span><i class="fa fa-lock"></i></span>
+			<button>Confirmer</button>
 
-						<span class="login100-form-avatar">
-							<i class="fa fa-lock"></i>
-						</span>
-
-						<div class="entrer wrap-input100 validate-input m-t-85 m-b-35" >
-							<input id="username" class="input100" type="text" list=dataMember>
-							<span class="focus-input100" data-placeholder="Nom d'utilisateur"></span>
-							<datalist id="dataMember"></datalist>
-						</div>
-
-						<div class="entrer wrap-input100 validate-input m-b-50" >
-							<input id="passwd" class="input100" type="password">
-							<span class="focus-input100" data-placeholder="Mot de passe"></span>
-						</div>
-						
-						<div class="text-center alert-danger" style="margin-top: 20px !important;">
-							<!-- Notification   d'erreur -->
-						</div> 
-
-						<div class="container-login100-form-btn">
-							<button onclick=login() type="button" class="login100-form-btn">
-								<i class="fa fa-sign-in"> <span class="text-btn">Se connecter</span> </i>
-							</button>
-						</div>
-
-						<div style="margin-top: 15px;" class="loading-img text-center center">
-							<!-- Une image gif loading se place ici -->
-						</div>
-
-					</form>
-				</div>
-			</div>
-		</div>
+		</form>
 		
 		<script src="assets/js/bootstrap.min.js"></script>
 		<script src="assets/js/login.js"></script>
