@@ -17,11 +17,11 @@ function createWindow () {
 		minHeight: haut,
 		icon: __dirname + icon,
 		useContentSize: true,
+		transparent: true,
 		webPreferences: {
 			nodeIntegration: true
 		}
 	})
-
   	mainWindow.loadURL('http://localhost:1903/login.html');
 
   	mainWindow.on('closed', function () {
