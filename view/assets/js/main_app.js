@@ -307,7 +307,7 @@ function membre_modifier(){
 
 function membre_ajouter(){
   let html = `
-      <div class="wrap-login100 p-t-85 p-b-20 formdc">
+      <div class="wrap-login100 p-t-85 p-b-20 formdc " style="margin-left:8.7% !important;">
     <form class="ajouter login100-form validate-form">
     <span class="login100-form-title p-b-70">
     Ajouter un compte
@@ -342,7 +342,7 @@ function membre_ajouter(){
 
 
 function membre_supprimer(){
-  let html = `<div class="wrap-login100 p-t-85 p-b-20 formdc">
+  let html = `<div class="wrap-login100 p-t-85 p-b-20 formdc" style="margin-left:8.7% !important;">
     <form class="supprimer login100-form validate-form">
     <span class="login100-form-title p-b-70">
     Supprimer un compte
