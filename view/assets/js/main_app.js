@@ -384,7 +384,7 @@ function membre_list(){
 
 
 function assign_cotisation(){
-  let html = `                                        <div class="wrap-login100 p-t-85 p-b-20">
+  let html = `                               <div class="wrap-login100 p-t-85 p-b-20" style="margin-left:8.7% !important;">
                                                   <form class="cotisation login100-form validate-form">
                                                           <span class="login100-form-title p-b-70">
                                                                   Cotisation par mois
