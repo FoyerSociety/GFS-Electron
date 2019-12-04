@@ -24,7 +24,7 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
  - Install executable
 
-     [**Download Windows Executable (79 Mo)**](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
+     [**Download Windows Executable (76.7 Mo)**](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
 
 
 
@@ -36,7 +36,7 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
      <td align="center"><a href="Landris18.github.com"><img src="https://avatars0.githubusercontent.com/u/47665507?s=400&v=4" width="150px;" height="150px;" alt="Landry Daniel"/> </td>
  </tr>
  <tr>
-  <td> Gaetan Jonathan :joy: </td>
+  <td> Gaetan Jonathan :grin: </td>
   <td> Landry Daniel :smiley: </td>
  </tr>
 </table>

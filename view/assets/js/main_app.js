@@ -385,7 +385,7 @@ function membre_list(){
 
 function assign_cotisation(){
   let html = `                               <div class="wrap-login100 p-t-85 p-b-20" style="margin-left:8.7% !important;">
-                                                  <form class="cotisation login100-form validate-form">
+                                                  <form class="assign login100-form validate-form">
                                                           <span class="login100-form-title p-b-70">
                                                                   Cotisation par mois
                                                           </span>
@@ -418,7 +418,7 @@ function assign_cotisation(){
                                                           </div>
 
                                                           <div class="container-login100-form-btn">
-                                                                  <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=addCotisation($(this))>
+                                                                  <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=assigner($(this))>
                                                                           <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
                                                                   </button>
                                                           </div>

@@ -6,7 +6,7 @@ function sleep(ms) {
 
 async function chargement(){
 
-    await sleep(4000);
+    await sleep(3000);
 
     $('.name_changed').animate(
         {opacity: 0},
