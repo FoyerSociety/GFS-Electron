@@ -70,3 +70,28 @@ function return_supprimer(feed_back){
         alert('Opération echouée');
     }
 }
+
+
+async function  assigner(rpr){
+    let frmp = rpr.parents('.assigner');
+
+    let user = frmp.find('.user_input').val();
+    let pass = frmp.find('.password_input').val();
+    $('.addCotbtn').html("<img src='assets/img/loading-white.gif'>");
+ 
+    await eel.delUser(user, pass)(return_assigner);
+}
+
+
+function return_assigner(feed_back){
+    let btnval= "<i class='fa fa-angle-right'> <span class='text-btn'>VALIDER</span> </i>";
+    $('.addCotbtn').html(btnval);
+
+    if (feed_back == 1){
+        $('.loading-img-cot').html('');
+        alert('Opération réussie');
+    }
+    else if (feed_back == 0){
+        alert('Opération echouée');
+    }
+}
