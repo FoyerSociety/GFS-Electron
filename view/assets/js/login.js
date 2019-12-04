@@ -18,7 +18,3 @@ function validateLogin(response){
     }
 
 }
-
-
-eel.getMember();
-// une appel pour optimiser le traitement dans la partie main

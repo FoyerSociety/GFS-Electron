@@ -1,6 +1,7 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
 const debug = require('electron-debug');
+// debug();
 
 let mainWindow;
 
@@ -21,7 +22,7 @@ function createWindow () {
 			nodeIntegration: true
 		}
 	})
-  	mainWindow.loadURL('http://localhost:1903/loading.html');
+  	mainWindow.loadURL('http://localhost:1903/login.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null
