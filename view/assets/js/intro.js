@@ -13,7 +13,7 @@ $(function(){
 
 async function chargement(){
 
-    await sleep(3000);
+    await sleep(4000);
 
     $('.name_changed').animate(
         {opacity: 0},
