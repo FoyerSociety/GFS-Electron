@@ -3,3 +3,4 @@ mysql-connector-python
 PyInstaller==3.5
 tk
 whichcraft
+playsound
