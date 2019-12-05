@@ -27,12 +27,12 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
  - Install executable
 
-     [**Download Windows Executable (76.7 Mo)**](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
+     [**Download Windows Executable (75.7 Mo)**](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
 
 
 
 
-## Developpeurs
+# Developpeurs
 <table>
  <tr>
     <td align="center"><a href="gaetan1903.github.com"><img src="https://avatars0.githubusercontent.com/u/43904633?s=460&v=4" width="150px;" height="150px;" alt="Gaetan Jonathan"/> </td>
