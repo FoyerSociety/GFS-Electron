@@ -8,7 +8,7 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
 `$ git clone https://github.com/FoyerSociety/GestionFoyer.git`
 
-`$ cd GestionFoyer && ./install.sh`
+`$ cd GestionFoyer && git checkout -f linux-stable && ./install.sh`
 
 
 ### Windows
@@ -16,9 +16,12 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
   ` git clone https://github.com/FoyerSociety/GestionFoyer.git`
 
+  ` git checkout -f windows-stable`
+
     * Installer nodejs
     * Installer electron (avec npm) `npm install electron`
-    * python main.py
+    
+  `python main.py`
 
           Ce qui ouvrira au premier temps une fenetre de verification de dependance
 

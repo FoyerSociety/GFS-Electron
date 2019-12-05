@@ -8,6 +8,7 @@ import hashlib
 import mysql.connector
 from whichcraft import which
 from datetime import datetime
+from playsound import playsound
 
 
 user, users = '', None
@@ -284,7 +285,7 @@ def delUser(usr, passwd):
 		pass
 	else:
 		eel.afficher(val)
-		return None 
+		return None
 
 	try:
 		db = database()
@@ -293,7 +294,7 @@ def delUser(usr, passwd):
 		return None
 	else:
 		cursor = db.cursor()
-	
+
 	try:
 		cursor.execute("DELETE FROM Membre Where username=%s", (usr,))
 		db.commit()
@@ -301,6 +302,45 @@ def delUser(usr, passwd):
 	except:
 		db.rollback()
 		return False
+
+
+@eel.expose
+def play_sound():
+	playsound('view/assets/audio/qui2.mp3')
+
+
+@eel.expose
+def assigner(usr, somme, mois, annee):
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	else:
+		cursor = db.cursor()
+
+	if usr == 'foyer':
+		try:
+			cursor.execute("""
+				SELECT 1 FROM Argent WHERE mois=%s AND annee=%s
+			""", (mois, annee))
+		except:
+			eel.afficher("Une erreur s'est produite lors de la connexion")
+			return None
+
+		if len(cursor.fetchall()) != 0:
+			sql = "INSERT INTO Argent(username, mois, annee, apayer) VALUES (%s, %s, %s, %s)"
+			data = []
+			global users
+			for user in users:
+				data.append((user, mois, annee, somme))
+			try:
+				cursor.executemany(sql, data)
+			except:
+				eel.afficher("Une erreur s'est produite lors de la connexion")
+				return None
+			return True 
+
 
 
 def main():

@@ -89,5 +89,6 @@ eel.getMember();
 
 
 $(function(){
+	eel.play_sound();
     chargement();
 });

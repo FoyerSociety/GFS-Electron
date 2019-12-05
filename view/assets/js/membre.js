@@ -28,7 +28,7 @@ async function add_member(rpr){
     let user = frmp.find('.user_input').val();
     let pass = frmp.find('.password_input').val();
     $('.addCotbtn').html("<img src='assets/img/loading-white.gif'>");
- 
+
     await eel.addUser(user, pass)(return_addUser);
 }
 
@@ -53,7 +53,7 @@ async function supprimer(rpr){
     let user = frmp.find('.user_input').val();
     let pass = frmp.find('.password_input').val();
     $('.addCotbtn').html("<img src='assets/img/loading-white.gif'>");
- 
+
     await eel.delUser(user, pass)(return_supprimer);
 }
 
@@ -76,10 +76,12 @@ async function  assigner(rpr){
     let frmp = rpr.parents('.assigner');
 
     let user = frmp.find('.user_input').val();
-    let pass = frmp.find('.password_input').val();
+    let somme = frmp.find('.somme_input').val();
+    let mois = frmp.find('.mois_input').val();
+    let annee = frmp.find('.annee_input').val();
     $('.addCotbtn').html("<img src='assets/img/loading-white.gif'>");
- 
-    await eel.delUser(user, pass)(return_assigner);
+
+    await eel.assigner(user, somme, mois, annee)(return_assigner);
 }
 
 
