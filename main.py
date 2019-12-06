@@ -325,23 +325,45 @@ def assigner(usr, somme, mois, annee):
 				SELECT 1 FROM Argent WHERE mois=%s AND annee=%s
 			""", (mois, annee))
 		except:
-			eel.afficher("Une erreur s'est produite lors de la connexion")
-			return None
-
-		if len(cursor.fetchall()) != 0:
+			db.commit()
+			return False
+		if len(cursor.fetchall()) == 0:
 			sql = "INSERT INTO Argent(username, mois, annee, apayer) VALUES (%s, %s, %s, %s)"
 			data = []
 			global users
 			for user in users:
-				data.append((user, mois, annee, somme))
+				data.append((user[0], mois, annee, somme))
 			try:
+				print(sql, data)
 				cursor.executemany(sql, data)
 			except:
-				eel.afficher("Une erreur s'est produite lors de la connexion")
-				return None
-			return True 
+				db.rollback()
+				return False
+			db.commit()
+			return True
+		else:
+			try:
+				cursor.execute('''
+					UPDATE Argent SET apayer=%s WHERE mois = %s AND annee = %s
+				''', (somme, mois, annee))
+			except:
+				db.rollback()
+				return False
+			
+			db.commit()
+			return True
 
-
+	else:
+		try:
+			cursor.execute('''
+				UPDATE Argent SET apayer=%s WHERE username = %s AND mois = %s AND annee = %s
+			''', (somme, usr, mois, annee))
+		except:
+			db.rollback()
+			return False
+		db.commit()
+		return True 
+		
 
 def main():
 	eel.start('login.html',  options=options)

@@ -384,54 +384,62 @@ function membre_list(){
 
 
 function assign_cotisation(){
-  let html = `                               <div class="wrap-login100 p-t-85 p-b-20" style="margin-left:8.7% !important;">
-                                                  <form class="assign login100-form validate-form">
-                                                          <span class="login100-form-title p-b-70">
-                                                                  Cotisation par mois
-                                                          </span>
+    html = `<div class="wrap-login100 p-t-85 p-b-20">
+      <form class="assigner login100-form validate-form">
+        <span class="login100-form-title p-b-70">
+          Cotisation
+        </span>
 
-                                                          <div class="entrer wrap-input100 validate-input m-t-85 m-b-35 userlog" >
-                                                                  <input class="user_input input100 info1" type="text" list="dataMember">
-                                                                  <span class="focus-input100" data-placeholder="User"></span>
-                                                                  <datalist id="dataMember">
-                                                                  </datalist>
-                                                          </div>
+        <div class="entrer wrap-input100 validate-input m-t-85 m-b-35 userlog" >
+          <input class="user_input input100 info1" type="text" list="dataMember">
+          <span class="focus-input100" data-placeholder="User"></span>
+          <datalist id="dataMember">
+          </datalist>
+        </div>
 
-                                                          <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
-                                                                  <input class="somme_input input100 info2" type="text">
-                                                                  <span class="focus-input100" data-placeholder="Somme"></span>
-                                                          </div>
+        <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
+          <input class="somme_input input100 info2" type="text">
+          <span class="focus-input100" data-placeholder="Somme"></span>
+        </div>
 
-                                                          <div class="entrer wrap-input100 validate-input m-b-50 moilog" >
-                                                                  <input class="mois_input input100 info2" type="text" list="dataMonth">
-                                                                  <span class="focus-input100" data-placeholder="Mois"></span>
-                                                                  <datalist id="dataMonth">
-                                                                          <!-- Ici se place les 12 mois de l'année -->
-                                                                  </datalist>
-                                                          </div>
+        <div class="entrer wrap-input100 validate-input m-b-50 moilog" >
+          <input class="mois_input input100 info2" type="text" list="dataMonth">
+          <span class="focus-input100" data-placeholder="Mois"></span>
+          <datalist id="dataMonth">
+            <!-- Ici se place les 12 mois de l'année -->
+          </datalist>
+        </div>
 
-                                                          <div class="entrer wrap-input100 validate-input m-b-50 analog" >
-                                                                  <input class="annee_input input100 info2" type="text" list="dataYear">
-                                                                  <span class="focus-input100" data-placeholder="Année"></span>
-                                                                  <datalist id="dataYear">
-                                                                  </datalist>
-                                                          </div>
+        <div class="entrer wrap-input100 validate-input m-b-50 analog" >
+          <input class="annee_input input100 info2" type="text" list="dataYear">
+          <span class="focus-input100" data-placeholder="Année"></span>
+          <datalist id="dataYear">
+            <!-- Ici se place 10 années -->
+          </datalist>
+        </div>
 
-                                                          <div class="container-login100-form-btn">
-                                                                  <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=assigner($(this))>
-                                                                          <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
-                                                                  </button>
-                                                          </div>
+        <div class="container-login100-form-btn">
+          <button disabled='disabled' title="✘ Vous n'êtes pas autorisé ✘" type="button" class="addCotbtn private login100-form-btn" onclick=assigner($(this))>
+            <i class="fa fa-angle-right"> <span class="text-btn">VALIDER</span> </i>
+          </button>
+        </div>
 
-                                                  </form>
-  					</div>`;
+        <!-- <div class='notif-cotisation text-center'> -->
+          <!-- afficher la notification -->
+        <!-- </div> -->
+
+      </form>
+    </div>`;
     membre_menu();
+    $('.container-fluid').append(html);
+    
     $('.container-fluid').append(html);
     $('.submenu_cot').addClass('pulse-button');
     decore_input();
     eel.getMember()(suggestMember);
     $('#dataMember').append(`<option>foyer<option>`);
     get_dataDate();
+    eel.privilege()(set_privilege);
 
 
 }
