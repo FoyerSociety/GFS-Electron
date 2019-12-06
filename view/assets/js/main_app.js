@@ -16,6 +16,34 @@ function set_privilege(val){
 }
 
 
+function set_custom_privilege(val){
+
+  if (val == 'su'){
+      $('.private').each(function(){
+          $(this).removeAttr('disabled');
+          $(this).removeAttr('title');
+      });
+  }
+  else{
+    $('.private').each(function(){
+      $(this).removeAttr('disabled');
+      $(this).removeAttr('title');
+    });
+    $('.user_input').removeAttr('list');
+    $('.user_input').attr('disabled', 'disabled');
+    eel.getUser()(make_user_input)
+  }
+
+}
+
+
+function make_user_input(user){
+    $('.user_input').val(user);
+    $('.user_input + span ').attr('data-placeholder', '');
+
+}
+
+
 function get_dataDate(){
   let Month = new Array('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Decembre');
 
@@ -299,8 +327,8 @@ function membre_modifier(){
     $('.container-fluid').append(html);
     $('.submenu_acc').addClass('pulse-button');
     decore_input();
-    eel.getMember()(suggestMember);
-    eel.privilege()(set_privilege);
+    eel.getMember()(suggestMember);       
+    eel.privilege()(set_custom_privilege);
 
 }
 
@@ -357,7 +385,7 @@ function membre_supprimer(){
 
                       <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
                               <input class="password_input input100 info2" type="password">
-                              <span class="focus-input100" data-placeholder="Mot de passe"></span>
+                              <span class="focus-input100" data-placeholder="Mot de passe Admin"></span>
                       </div>
 
     <div class="container-login100-form-btn">
@@ -399,7 +427,7 @@ function assign_cotisation(){
 
         <div class="entrer wrap-input100 validate-input m-b-50 somlog" >
           <input class="somme_input input100 info2" type="text">
-          <span class="focus-input100" data-placeholder="Somme"></span>
+          <span class="focus-input100" data-placeholder="Somme Mois"></span>
         </div>
 
         <div class="entrer wrap-input100 validate-input m-b-50 moilog" >
@@ -431,8 +459,6 @@ function assign_cotisation(){
       </form>
     </div>`;
     membre_menu();
-    $('.container-fluid').append(html);
-    
     $('.container-fluid').append(html);
     $('.submenu_cot').addClass('pulse-button');
     decore_input();

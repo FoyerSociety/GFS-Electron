@@ -1,7 +1,7 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
-const debug = require('electron-debug');
-debug();
+// const debug = require('electron-debug');
+// debug();
 
 let mainWindow;
 
@@ -53,7 +53,7 @@ if (mainWindow === null) createWindow()
 })
 
  const menu = Menu.buildFromTemplate(
-// 	[
+	 	[
 // 		{
 // 			label: "",
 // 			submenu: [
@@ -82,7 +82,7 @@ if (mainWindow === null) createWindow()
 // 		{
 // 			label: ""
 // 		}
-// 	]
+	]
 );
 
 Menu.setApplicationMenu(menu);
