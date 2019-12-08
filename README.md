@@ -8,7 +8,9 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
 `$ git clone https://github.com/FoyerSociety/GestionFoyer.git`
 
-`$ cd GestionFoyer && git checkout -f linux-stable && ./install-v2.sh`
+`$ cd GestionFoyer && git checkout -f linux-stable`
+
+`$ sudo ./install-v2.sh`
 
 
 ### Windows
