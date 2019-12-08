@@ -1,6 +1,6 @@
 Eel==0.10.4
 mysql-connector-python
-PyInstaller==3.5
+PyInstaller
 tk
 whichcraft
 playsound

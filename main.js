@@ -1,7 +1,5 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
-// const debug = require('electron-debug');
-// debug();
 
 let mainWindow;
 
@@ -9,7 +7,7 @@ let mainWindow;
 function createWindow () {
 	mainWindow = new BrowserWindow({
 		width: 972,
-		height: 585,
+		height: haut,
 		center: true,
 		maxWidth: 972,
 		minWidth: 972,
@@ -34,7 +32,7 @@ if (process.platform.toLowerCase()  == 'win32'){
 	icon = `/src/foyer.ico`
 }
 else{
-	haut = 585
+	haut = 555
 	icon = `/src/foyer.png`
 }
 
@@ -54,34 +52,34 @@ if (mainWindow === null) createWindow()
 
  const menu = Menu.buildFromTemplate(
 	 	[
-// 		{
-// 			label: "",
-// 			submenu: [
-// 				{
-// 					label: "Fermer la fenêtre",
-// 					click: function(){
-// 						app.quit()
-// 					}
-// 				}
-// 			]
-// 		},
-// 		{
-// 			label: " ",
-// 			submenu : [
-// 				{
-// 					label: "Mode sombre",
-// 					click: function(){
-// 						mainWindow.backgroundColor = 'black';
-// 					}
-// 				}
-// 			]
-// 		},
-// 		{
-// 			label: ""
-// 		},
-// 		{
-// 			label: ""
-// 		}
+		{
+			label: "",
+			submenu: [
+				{
+					label: "Fermer la fenêtre",
+					click: function(){
+						app.quit()
+					}
+				}
+			]
+		},
+		{
+			label: " ",
+			submenu : [
+				{
+					label: "Mode sombre",
+					click: function(){
+						mainWindow.backgroundColor = 'black';
+					}
+				}
+			]
+		},
+		{
+			label: ""
+		},
+		{
+			label: ""
+		}
 	]
 );
 

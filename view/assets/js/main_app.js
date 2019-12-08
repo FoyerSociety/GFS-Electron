@@ -469,3 +469,8 @@ function assign_cotisation(){
 
 
 }
+
+
+function deconnexion(){
+    window.location='login.html';
+}

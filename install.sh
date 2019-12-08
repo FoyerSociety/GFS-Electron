@@ -20,9 +20,8 @@ else
 fi
 
 if [ $electron_file = "electron not found" ]; then
-    echo -e "${rougefonce} electron non trouvé ✘\n${neutre} Installer electron\n\n"
-		echo -e "1: Arch \n2: Autre\n"
-		read -p '[1/2]>> ' distro
+    echo -e "${rougefonce} electron non trouvé ✘\n${neutre} Installation electron\n\n"
+		
 		
 		if [ $distro = 1 ]
 		then

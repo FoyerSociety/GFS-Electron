@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import sys
 if sys.platform == "win32":
 	import verification
@@ -14,7 +16,7 @@ from playsound import playsound
 user, users = '', None
 
 if sys.platform == 'linux':
-	path = '/usr/bin/electron4'
+	path = '/usr/bin/electron'
 
 elif sys.platform == 'win32':
 	path = r'node_modules\electron\dist\electron'
