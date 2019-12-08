@@ -8,7 +8,7 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
 `$ git clone https://github.com/FoyerSociety/GestionFoyer.git`
 
-`$ cd GestionFoyer && git checkout -f linux-stable && ./install.sh`
+`$ cd GestionFoyer && git checkout -f linux-stable && ./install-v2.sh`
 
 
 ### Windows
@@ -27,7 +27,9 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
  - Install executable
 
-     [**Download Windows Executable (75.7 Mo)**](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
+     **Download** [FoyerApp-1.0.0-alpha.exe](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
+     
+     FoyerApp-2.0.0b1.exe ( Comming Soon )
 
 
 
