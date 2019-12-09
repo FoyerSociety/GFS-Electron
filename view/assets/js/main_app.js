@@ -488,5 +488,5 @@ function setUser(val){
 
 
 function print_resteSomme(somme){
-    $('#somme_reste').html(somme+ ' Ar');
+  $('#somme_reste').html(somme+ ' Ar');
 }
