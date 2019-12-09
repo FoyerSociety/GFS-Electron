@@ -2,8 +2,8 @@ const {app, BrowserWindow, Menu} = require('electron')
 
 
 let mainWindow;
-//const debug=require('electron-debug')
-//debug()
+const debug=require('electron-debug')
+debug()
 
 function createWindow () {
 	mainWindow = new BrowserWindow({
@@ -21,7 +21,7 @@ function createWindow () {
 			nodeIntegration: true
 		}
 	})
-  	mainWindow.loadURL('http://localhost:1903/accbud.html');
+  	mainWindow.loadURL('http://localhost:1903/main.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null
