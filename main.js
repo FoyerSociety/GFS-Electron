@@ -52,37 +52,6 @@ app.on('activate', function () {
 if (mainWindow === null) createWindow()
 })
 
- const menu = Menu.buildFromTemplate(
-	 	[
-// 		{
-// 			label: "",
-// 			submenu: [
-// 				{
-// 					label: "Fermer la fenêtre",
-// 					click: function(){
-// 						app.quit()
-// 					}
-// 				}
-// 			]
-// 		},
-// 		{
-// 			label: " ",
-// 			submenu : [
-// 				{
-// 					label: "Mode sombre",
-// 					click: function(){
-// 						mainWindow.backgroundColor = 'black';
-// 					}
-// 				}
-// 			]
-// 		},
-// 		{
-// 			label: ""
-// 		},
-// 		{
-// 			label: ""
-// 		}
-	]
-);
+ 
 
-Menu.setApplicationMenu(menu);
+//Menu.setApplicationMenu(menu);
