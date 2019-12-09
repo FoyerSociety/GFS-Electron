@@ -1,9 +1,10 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
+// const debug = require('electron-debug')
+// debug()
 
 let mainWindow;
-const debug=require('electron-debug')
-debug()
+
 
 function createWindow () {
 	mainWindow = new BrowserWindow({
@@ -21,7 +22,7 @@ function createWindow () {
 			nodeIntegration: true
 		}
 	})
-  	mainWindow.loadURL('http://localhost:1903/main.html');
+  	mainWindow.loadURL('http://localhost:1903/login.html');
 
   	mainWindow.on('closed', function () {
 		mainWindow = null
@@ -29,7 +30,7 @@ function createWindow () {
 }
 
 if (process.platform.toLowerCase()  == 'win32'){
-	haut  = 605
+	haut  = 590
 	icon = `/src/foyer.ico`
 }
 else{
