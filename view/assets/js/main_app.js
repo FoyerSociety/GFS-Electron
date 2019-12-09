@@ -474,3 +474,19 @@ function assign_cotisation(){
 function deconnexion(){
     window.location='login.html';
 }
+
+
+$(function(){
+  eel.getUser()(setUser);
+});
+
+
+function setUser(val){
+  $('.user_top').text(val);
+  eel.resteSomme(val)(print_resteSomme);
+}
+
+
+function print_resteSomme(somme){
+    $('#somme_reste').html(somme+ ' Ar');
+}

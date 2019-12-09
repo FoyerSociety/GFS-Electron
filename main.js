@@ -1,9 +1,10 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
+// const debug = require('electron-debug')
+// debug()
 
 let mainWindow;
-const debug=require('electron-debug')
-debug()
+
 
 function createWindow () {
 	mainWindow = new BrowserWindow({
@@ -29,7 +30,7 @@ function createWindow () {
 }
 
 if (process.platform.toLowerCase()  == 'win32'){
-	haut  = 605
+	haut  = 590
 	icon = `/src/foyer.ico`
 }
 else{

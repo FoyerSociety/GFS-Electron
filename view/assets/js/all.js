@@ -12,14 +12,6 @@ function afficher(val){
 }
 
 
-function setUser(val){
-    $('.user_top').text(val);
-}
-
-
-eel.getUser()(setUser);
-
-
 
 function started(){
 	let html = `

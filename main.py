@@ -14,6 +14,8 @@ from playsound import playsound
 
 
 user, users = '', None
+mois_globale = ('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin',
+				'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre')
 
 if sys.platform == 'linux':
 	path = '/usr/bin/electron4'
@@ -364,8 +366,28 @@ def assigner(usr, somme, mois, annee):
 			db.rollback()
 			return False
 		db.commit()
-		return True 
-		
+		return True
+
+@eel.expose
+def resteSomme(usr):
+	usr = usr.lower()
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	cursor = db.cursor()
+
+	try:
+		cursor.execute("""
+			SELECT apayer - paye FROM Argent WHERE username=%s AND mois=%s AND annee=%s
+		""", (usr, mois_globale[datetime.today().month - 1], datetime.today().year))
+	except:
+		eel.afficher("Un probleme inattendue est survenue")
+		return None
+	
+	return cursor.fetchall()[0] 
+
 
 def main():
 	eel.start('login.html',  options=options)
