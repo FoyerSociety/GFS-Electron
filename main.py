@@ -16,7 +16,7 @@ from playsound import playsound
 user, users = '', None
 
 if sys.platform == 'linux':
-	path = '/usr/bin/electron'
+	path = '/usr/bin/electron4'
 
 elif sys.platform == 'win32':
 	path = r'node_modules\electron\dist\electron'

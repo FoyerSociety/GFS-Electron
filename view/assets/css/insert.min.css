@@ -74,6 +74,17 @@
 	color:#fff !important;
       }
 
+      .fa-bitcoin{
+	      color:#a56f0b;
+	      border-radius:200px;
+	      border:1px solid #a56f0b;
+	      padding: 50px;
+	      padding-left:80px;
+	      padding-right:80px;
+	      margin-left:30%;
+	      margin-top:3%;
+        }
+
       .fa-birthday-cake{
 	font-size:35px !important;
 	margin-left:11% !important;
@@ -268,6 +279,21 @@
 
 	.cot, .dep, .jir, .det, .stat, .hist{
 		margin-left:4%;
+	}
+
+
+	.fa-heart{
+		color:rgb(230, 44, 81) !important;
+		border: 1px solid rgb(230, 44, 81);
+		border-radius:50px;
+		
+		padding:12px;
+		
+		cursor:pointer;
+	}
+	.fa-heart:hover{
+		color: #fff !important;
+		background-color: rgb(230, 44, 81);
 	}
 
 
