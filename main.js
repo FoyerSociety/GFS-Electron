@@ -11,13 +11,14 @@ function createWindow () {
 		width: 972,
 		height: haut,
 		center: true,
-		maxWidth: 972,
-		minWidth: 972,
-		maxHeight: haut,
-		minHeight: haut,
+		resizable: false,
+		
+		// maxWidth: 972,
+		// minWidth: 972,
+		// maxHeight: haut+4,
+		// minHeight: haut,
 		icon: __dirname + icon,
 		useContentSize: true,
-		transparent: true,
 		webPreferences: {
 			nodeIntegration: true
 		}
@@ -34,7 +35,7 @@ if (process.platform.toLowerCase()  == 'win32'){
 	icon = `/src/foyer.ico`
 }
 else{
-	haut = 585
+	haut = 601
 	icon = `/src/foyer.png`
 }
 
@@ -52,10 +53,10 @@ app.on('activate', function () {
 if (mainWindow === null) createWindow()
 })
 
- const menu = Menu.buildFromTemplate(
-	 	[
+const menu = Menu.buildFromTemplate(
+	[
 		{
-			label: "",
+			label: "Fichier",
 			submenu: [
 				{
 					label: "Fermer la fenêtre",
@@ -65,22 +66,37 @@ if (mainWindow === null) createWindow()
 				}
 			]
 		},
+
 		{
-			label: " ",
-			submenu : [
+			label: "Edition",
+			submenu: [
 				{
-					label: "Mode sombre",
-					click: function(){
-						mainWindow.backgroundColor = 'black';
-					}
+					label: "Mode Sombre"
+					
 				}
+			
 			]
 		},
+
 		{
-			label: ""
-		},
-		{
-			label: ""
+			label: "Apropos",
+			submenu: [
+				{
+					label: "Developers"
+					
+				},
+
+				{
+					label: "Logiciel"
+					
+				},
+
+				{
+					label: "License"
+					
+				}
+			
+			]
 		}
 	]
 );

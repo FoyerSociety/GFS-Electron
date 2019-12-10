@@ -20,9 +20,11 @@ mois_globale = ('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin',
 start_date = datetime(2019, 12, 9)
 today_date = datetime.today()
 
+ro = None
+
 
 if sys.platform == 'linux':
-	path = '/usr/bin/electron4'
+	path = '/usr/bin/electron'
 
 elif sys.platform == 'win32':
 	path = r'node_modules\electron\dist\electron'
@@ -395,27 +397,33 @@ def resteSomme(usr):
 
 @eel.expose
 def getMenu():
-	try:
-		db = database()
-	except:
-		eel.afficher("Une erreur s'est produite lors de la connexion")
-		return None
-	cursor = db.cursor()
+	global ro
 
-	value = ((today_date - start_date).days % 14) + 1 
-	# selection du chiffre du repas
+	if ro is None:
+		try:
+			db = database()
+		except:
+			eel.afficher("Une erreur s'est produite lors de la connexion")
+			return None
+		cursor = db.cursor()
 
-	try:
-		cursor.execute("""
-			SELECT menu, prix FROM Menu WHERE id=%s
-		""", (value,))
-	except Exception as e:
-		print(e)
-		eel.afficher('Probleme inattendue survenu')
-		return None
+		value = ((today_date - start_date).days % 14) + 1 
+		# selection du chiffre du repas
+
+		try:
+			cursor.execute("""
+				SELECT menu, prix FROM Menu WHERE id=%s
+			""", (value,))
+		except Exception as e:
+			print(e)
+			eel.afficher('Probleme inattendue survenu')
+			return None
+		
+		val = cursor.fetchall()
+		ro = f"{val[0][0]} | {val[0][1]}"
+		return ro
 	
-	val = cursor.fetchall()
-	return f"{val[0][0]} | {val[0][1]}"
+	return ro
 
 	
 
