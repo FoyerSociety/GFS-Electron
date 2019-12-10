@@ -18,10 +18,11 @@ mois_globale = ('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin',
 				'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre')
 
 start_date = datetime(2019, 12, 9)
+start_cuisine = datetime(2019, 12, 7)
 today_date = datetime.today()
 
 ro = None
-
+cuisinier = None
 
 if sys.platform == 'linux':
 	path = '/usr/bin/electron'
@@ -344,7 +345,6 @@ def assigner(usr, somme, mois, annee):
 			for user in users:
 				data.append((user[0], mois, annee, somme))
 			try:
-				print(sql, data)
 				cursor.executemany(sql, data)
 			except:
 				db.rollback()
@@ -421,15 +421,42 @@ def getMenu():
 		
 		val = cursor.fetchall()
 		ro = f"{val[0][0]} | {val[0][1]}"
-		return ro
 	
 	return ro
 
-	
+
+@eel.expose
+def getCuisinier():
+	global cuisinier
+	global users
+
+	if cuisinier is None:
+		value = (today_date - start_cuisine).days % len(users)
+
+		try:
+			db = database()
+		except:
+			eel.afficher("Une erreur s'est produite lors de la connexion")
+			return None
+		cursor = db.cursor()
+
+		try:
+			cursor.execute("""
+				SELECT username FROM Membre WHERE menage=%s
+			""", (value, ))
+		except Exception as e:
+			print(e)
+			eel.afficher("Une erreur s'est produite")
+			return None
+		
+		cuisinier = cursor.fetchall()
+		cuisinier = cuisinier[0][0].capitalize()
+
+	return cuisinier
 
 
 def main():
-	eel.start('login.html',  options=options)
+	eel.start('login.html', options=options)
 
 
 if __name__ == '__main__':
