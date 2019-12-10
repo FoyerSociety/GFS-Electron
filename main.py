@@ -17,6 +17,10 @@ user, users = '', None
 mois_globale = ('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin',
 				'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre')
 
+start_date = datetime(2019, 12, 9)
+today_date = datetime.today()
+
+
 if sys.platform == 'linux':
 	path = '/usr/bin/electron4'
 
@@ -387,6 +391,33 @@ def resteSomme(usr):
 		return None
 	
 	return cursor.fetchall()[0] 
+
+
+@eel.expose
+def getMenu():
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	cursor = db.cursor()
+
+	value = ((today_date - start_date).days % 14) + 1 
+	# selection du chiffre du repas
+
+	try:
+		cursor.execute("""
+			SELECT menu, prix FROM Menu WHERE id=%s
+		""", (value,))
+	except Exception as e:
+		print(e)
+		eel.afficher('Probleme inattendue survenu')
+		return None
+	
+	val = cursor.fetchall()
+	return f"{val[0][0]} | {val[0][1]}"
+
+	
 
 
 def main():

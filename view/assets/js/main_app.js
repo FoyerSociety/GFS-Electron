@@ -484,9 +484,15 @@ $(function(){
 function setUser(val){
   $('.user_top').text(val);
   eel.resteSomme(val)(print_resteSomme);
+  eel.getMenu()(print_getMenu);
 }
 
 
 function print_resteSomme(somme){
   $('#somme_reste').html(somme+ ' Ar');
+}
+
+
+function print_getMenu(val){
+  $('#menu_today').html(val+ ' Ar');
 }
