@@ -490,9 +490,13 @@ function setUser(val){
 
 function print_resteSomme(somme){
   $('#somme_reste').html(somme+ ' Ar');
+  $('#somme_reste').css('border', '1px solid rgb(223, 43, 79)');
+  $('#somme_reste').css('background-color', 'rgb(223, 43, 79)');
 }
 
 
 function print_getMenu(val){
   $('#menu_today').html(val+ ' Ar');
+  $('#menu_today').css('border', '1px solid rgb(223, 43, 79)');
+  $('#menu_today').css('background-color', 'rgb(223, 43, 79)');
 }
