@@ -27,16 +27,20 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
           Ce qui ouvrira au premier temps une fenetre de verification de dependance
 
- - Install executable
+ - Install executable (Version  with all dependances)
 
      **Download** [FoyerApp-1.0.0-alpha.exe](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
      
      FoyerApp-2.0.0b1.exe ( Comming Soon )
 
 
+## Dependances
 
-
-# Developpeurs
+    * Python >= 3.6
+    * electron 
+    * nodejs / npm
+    
+## Developpeurs
 <table>
  <tr>
     <td align="center"><a href="gaetan1903.github.com"><img src="https://avatars0.githubusercontent.com/u/43904633?s=460&v=4" width="150px;" height="150px;" alt="Gaetan Jonathan"/> </td>
