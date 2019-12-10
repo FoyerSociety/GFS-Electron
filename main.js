@@ -1,7 +1,7 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
-const debug = require('electron-debug')
-debug()
+//const debug = require('electron-debug')
+//debug()
 
 let mainWindow;
 
@@ -12,11 +12,6 @@ function createWindow () {
 		height: haut,
 		center: true,
 		resizable: false,
-		
-		// maxWidth: 972,
-		// minWidth: 972,
-		// maxHeight: haut+4,
-		// minHeight: haut,
 		icon: __dirname + icon,
 		useContentSize: true,
 		webPreferences: {

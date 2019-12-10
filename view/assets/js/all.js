@@ -25,7 +25,7 @@ function started(){
 											<div class="col-lg-6">
 												<div class="p-5">
 													<div class="text-center">
-														<h1 class="h4 text-gray-900 mb-2" style="color: #152733 !important; font-weight: bold !important;  font-size: 24px;">SE CONNECTER</h1>
+														<h1 class="h4 text-gray-900 mb-2" style="color: #152733 !important; font-weight: bold !important;  font-size: 24px;">S'IDENTIFIER</h1>
 														<p class="mb-4"> <br> Bénéficiez de nos services <br> Identifiez-vous </p>
 													</div>
 													<form id="mail_space" class="user">
@@ -42,7 +42,7 @@ function started(){
 													</form>
 													<hr>
 													<div style="font-size: 15px !important; background-color:#fff !important; padding-bottom: 1px !important;" class="alert-danger text-center">
-														<!-- Erreur msoratra aketo -->
+														<!-- Erreur misoratra aketo -->
 													</div>
 												</div>
 											</div>

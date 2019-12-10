@@ -101,7 +101,7 @@ fi
 rm foyerApp
 set +x
 
-echo -e "\nCréation de Bureau et Application dans le systeme"
+echo -e "\nCréation de bureau et application dans le système"
 ln -sf /opt/FoyerSociety/foyerApp /usr/bin/foyerApp
 cp -f src/foyerApp.desktop /usr/share/applications/
 chmod +x /usr/share/applications/foyerApp.desktop
