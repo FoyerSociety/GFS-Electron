@@ -526,6 +526,7 @@ function setUser(val){
   $('.user_top').text(val);
   eel.resteSomme(val)(print_resteSomme);
   eel.getMenu()(print_getMenu);
+  eel.getCuisinier()(print_getCuisinier)
 }
 
 
@@ -540,4 +541,11 @@ function print_getMenu(val){
   $('#menu_today').html(val+ ' Ar');
   $('#menu_today').css('border', '1px solid rgb(223, 43, 79)');
   $('#menu_today').css('background-color', 'rgb(223, 43, 79)');
+}
+
+
+function print_getCuisinier(val){
+  $('#cuisinier_today').html(val);
+  $('#cuisinier_today').css('border', '1px solid rgb(223, 43, 79)');
+  $('#cuisinier_today').css('background-color', 'rgb(223, 43, 79)');
 }
