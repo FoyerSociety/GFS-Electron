@@ -14,9 +14,15 @@ from playsound import playsound
 
 
 user, users = '', None
+mois_globale = ('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin',
+				'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre')
+
+start_date = datetime(2019, 12, 9)
+today_date = datetime.today()
+
 
 if sys.platform == 'linux':
-	path = '/usr/bin/electron'
+	path = '/usr/bin/electron4'
 
 elif sys.platform == 'win32':
 	path = r'node_modules\electron\dist\electron'
@@ -364,8 +370,55 @@ def assigner(usr, somme, mois, annee):
 			db.rollback()
 			return False
 		db.commit()
-		return True 
-		
+		return True
+
+@eel.expose
+def resteSomme(usr):
+	usr = usr.lower()
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	cursor = db.cursor()
+
+	try:
+		cursor.execute("""
+			SELECT apayer - paye FROM Argent WHERE username=%s AND mois=%s AND annee=%s
+		""", (usr, mois_globale[datetime.today().month - 1], datetime.today().year))
+	except:
+		eel.afficher("Un probleme inattendue est survenue")
+		return None
+	
+	return cursor.fetchall()[0] 
+
+
+@eel.expose
+def getMenu():
+	try:
+		db = database()
+	except:
+		eel.afficher("Une erreur s'est produite lors de la connexion")
+		return None
+	cursor = db.cursor()
+
+	value = ((today_date - start_date).days % 14) + 1 
+	# selection du chiffre du repas
+
+	try:
+		cursor.execute("""
+			SELECT menu, prix FROM Menu WHERE id=%s
+		""", (value,))
+	except Exception as e:
+		print(e)
+		eel.afficher('Probleme inattendue survenu')
+		return None
+	
+	val = cursor.fetchall()
+	return f"{val[0][0]} | {val[0][1]}"
+
+	
+
 
 def main():
 	eel.start('login.html',  options=options)

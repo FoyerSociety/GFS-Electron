@@ -1,6 +1,6 @@
 {
   "name": "gestionfoyer",
-  "version": "1.0.0-alpha",
+  "version": "2.0.1b2",
   "description": "Une plateforme de gestion du foyer Fsociety",
   "main": "main.js",
   "dependencies": {

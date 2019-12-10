@@ -412,7 +412,7 @@ function membre_list(){
 
 
 function assign_cotisation(){
-    html = `<div class="wrap-login100 p-t-85 p-b-20">
+    html = `<div class="wrap-login100 p-t-85 p-b-20" style="margin-left:8.7% !important">
       <form class="assigner login100-form validate-form">
         <span class="login100-form-title p-b-70">
           Cotisation
@@ -473,4 +473,30 @@ function assign_cotisation(){
 
 function deconnexion(){
     window.location='login.html';
+}
+
+
+$(function(){
+  eel.getUser()(setUser);
+});
+
+
+function setUser(val){
+  $('.user_top').text(val);
+  eel.resteSomme(val)(print_resteSomme);
+  eel.getMenu()(print_getMenu);
+}
+
+
+function print_resteSomme(somme){
+  $('#somme_reste').html(somme+ ' Ar');
+  $('#somme_reste').css('border', '1px solid rgb(223, 43, 79)');
+  $('#somme_reste').css('background-color', 'rgb(223, 43, 79)');
+}
+
+
+function print_getMenu(val){
+  $('#menu_today').html(val+ ' Ar');
+  $('#menu_today').css('border', '1px solid rgb(223, 43, 79)');
+  $('#menu_today').css('background-color', 'rgb(223, 43, 79)');
 }
