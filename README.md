@@ -4,7 +4,7 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
 ## Installation
 
-### LINUX
+### LINUX (tested on Arch)
 
 `$ git clone https://github.com/FoyerSociety/GestionFoyer.git`
 
@@ -13,7 +13,7 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 `$ sudo ./install-v2.sh`
 
 
-### Windows
+### Windows (tested on Win 10)
 - Build from source
 
   ` git clone https://github.com/FoyerSociety/GestionFoyer.git`
@@ -31,14 +31,15 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
      **Download** [FoyerApp-1.0.0-alpha.exe](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
      
-     FoyerApp-2.0.0b1.exe ( Comming Soon )
+     FoyerApp-2.0.3.exe ( Comming Soon )
 
 
 ## Dependances
 
-    * Python >= 3.6
-    * electron 
+    * python >= 3.6 
     * nodejs / npm
+    
+ <img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/dependances.PNG" align="center">
     
 ## Developpeurs
 <table>
