@@ -526,7 +526,7 @@ function setUser(val){
   $('.user_top').text(val);
   eel.resteSomme(val)(print_resteSomme);
   eel.getMenu()(print_getMenu);
-  eel.getCuisinier()(print_getCuisinier)
+  eel.getCuisinier()(print_getCuisinier);
 }
 
 

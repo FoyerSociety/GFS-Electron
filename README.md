@@ -1,6 +1,8 @@
 # GestionFoyer
 Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jirama,  ménage, ...)
 
+<img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview.png" align="center" alt="preview">
+
 
 ## Installation
 
