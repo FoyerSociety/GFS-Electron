@@ -13,6 +13,16 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 `$ sudo ./install-v2.sh`
 
 
+#### Debian
+  
+  Pour l'installation des systèmes basés sous Debian (Ubuntu, Elementary, Linux Mint,...)
+  
+  Il est parfois mieux d'installer electron executable que par npm ( sauf si vous en avez deja fonctionnel)
+  
+  * Telecharger electron compatible avec votre OS [ici](https://github.com/electron/electron/releases)
+  * Decompresser et Placer dans un endroit fixe. (/opt/ recommandé)
+  * Créer un lien symbolique: `# ln -sf {full_path_of_electron_dir}/electron /usr/bin/electron`
+
 ### Windows (tested on Win 10)
 - Build from source
 
