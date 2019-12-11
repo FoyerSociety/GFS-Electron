@@ -1,7 +1,7 @@
 [Desktop Entry]
 Version=1.0.0-alpha
 Type=Application
-Name=FoyerApp
+Name=Gestion FoyerSociety
 Exec=foyerApp
 Terminal=false
 Icon=/opt/FoyerSociety/src/foyer.png

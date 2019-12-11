@@ -1,17 +1,31 @@
 # GestionFoyer
 Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jirama,  ménage, ...)
 
+<img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview.png" align="center" alt="preview">
+
 
 ## Installation
 
-### LINUX
+### LINUX (tested on Arch)
 
 `$ git clone https://github.com/FoyerSociety/GestionFoyer.git`
 
-`$ cd GestionFoyer && git checkout -f linux-stable && ./install.sh`
+`$ cd GestionFoyer && git checkout -f linux-stable`
+
+`$ sudo ./install-v2.sh`
 
 
-### Windows
+#### Debian
+  
+  Pour l'installation des systèmes basés sous Debian (Ubuntu, Elementary, Linux Mint,...)
+  
+  Il est parfois mieux d'installer electron executable que par npm ( sauf si vous en avez deja fonctionnel)
+  
+  * Telecharger electron compatible avec votre OS [ici](https://github.com/electron/electron/releases)
+  * Decompresser et Placer dans un endroit fixe. (/opt/ recommandé)
+  * Créer un lien symbolique: `# ln -sf {full_path_of_electron_dir}/electron /usr/bin/electron`
+
+### Windows (tested on Win 10)
 - Build from source
 
   ` git clone https://github.com/FoyerSociety/GestionFoyer.git`
@@ -25,14 +39,21 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
           Ce qui ouvrira au premier temps une fenetre de verification de dependance
 
- - Install executable
+ - Install executable (Version  with all dependances)
 
-     [**Download Windows Executable (75.7 Mo)**](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
+     **Download** [FoyerApp-1.0.0-alpha.exe](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
+     
+     FoyerApp-2.0.3.exe ( Comming Soon )
 
 
+## Dependances
 
-
-# Developpeurs
+    * python >= 3.6 
+    * nodejs / npm
+    
+ <img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/dependances.PNG" align="center">
+    
+## Developpeurs
 <table>
  <tr>
     <td align="center"><a href="gaetan1903.github.com"><img src="https://avatars0.githubusercontent.com/u/43904633?s=460&v=4" width="150px;" height="150px;" alt="Gaetan Jonathan"/> </td>

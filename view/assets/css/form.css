@@ -9,7 +9,8 @@
 
 body, html {
 	height: 100%;
-	font-family: Poppins-Regular, sans-serif !important;
+  font-family: Poppins-Regular, sans-serif !important;
+  background-color: #0e1419 !important;
 }
 
 /*---------------------------------------------*/

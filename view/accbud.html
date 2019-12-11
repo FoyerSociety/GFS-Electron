@@ -31,7 +31,7 @@
 				<div class="sidebar-brand-text mx-3">GFS</div>
 			</a>
 
-			<li id="accueil_button" onclick="home_menu()" class="nav-item classacc lact">
+			<li id="accueil_button" class="nav-item classacc lact">
 				<a class="nav-link" href="#">
 					<i class="fa fa-home"></i>
 					<div class="picon">Accueil</div>
@@ -58,7 +58,7 @@
 			</li>
 
 			<!-- Nav Item - Charts -->
-			<li id="membre_button" class=" nav-item classmbr" onclick="membre_menu()" style="margin-top:-2% !important">
+			<li id="membre_button" class="nav-item classmbr" onclick="membre_menu()" style="margin-top:-2% !important">
 				<a class="nav-link" href="#">
 				<i class="fa fa-users"></i>
 				<div class="picon mbre">Membres</div></a>
@@ -80,7 +80,7 @@
 					<!-- Topbar Navbar -->
 					<ul class="navbar-nav ml-auto">
 						<li>
-							<img src="assets/img/redo.gif"  onclick="window.location.reload()" style="margin-top: 90%!important; margin-left:-1200% !important; cursor: pointer;">
+							<img src="assets/img/redo.gif"  onclick="window.location.reload()" style="margin-top: 90%!important; margin-left:-1300% !important; cursor: pointer;">
 						</li>
 
 						<li>
@@ -129,7 +129,7 @@
 							<!-- Dropdown - User Information -->
 							<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-									<i class="fa fa-sign-out" style="font-size: 13px !important;"></i>
+									<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 									Deconnexion
 								</a>
 							</div>
@@ -141,36 +141,19 @@
 
 				<!-- Begin Page Content -->
 				<div class="container-fluid">
-					<div class="card" style="width: 20rem;margin-left: 5% !important;margin-top: 4%; background-color: #0e1419; border: none;">
-						<h5 class="card-title text-center" style="font-size: 15px; color: #fff;">Le plat du jour | Budget</h5>
-						<img src="assets/img/humb.jpg" class="card-img-top" style="opacity: 1;">
-						<div class="card-body">
-						  	<p id="menu_today" class="card-text text-center ordre"><img src="assets/img/home-load.gif"></p>
-						</div>
-					</div>
-					<div class="card" style="width: 20rem;margin-left: 55% !important; margin-top: -32.1%; background-color: #0e1419; border: none;"">
-						<h5 class="card-title text-center" style="font-size: 15px; color: #fff;">Cuisinier</h5>
-						<img src="assets/img/cuis.jpg" class="card-img-top" style="opacity: 1;">
-						<div class="card-body">
-						  <p id="cuisinier_today" class="card-text text-center ordre"><img src="assets/img/home-load.gif"></p>
-						</div>
-					</div>
-					<div class="card" style="width: 20rem;margin-left: 5% !important; margin-top: 1.8%; background-color: #0e1419; border: none;"">
-						<h5 class="card-title text-center" style="font-size: 15px; color: #fff;">Tour de ménage | Demain</h5>
-						<img src="assets/img/clean.jpg" class="card-img-top" style="opacity: 1;">
-						<div class="card-body">
-						  <p class="card-text text-center ordre">Dinahasina </p>
-						</div>
-					</div>
-					<div class="card" style="width: 20rem;margin-left: 55% !important; margin-top: -32.4%; background-color: #0e1419; border: none;"">
-						<h5  class="card-title text-center" style="font-size: 15px; color: #fff;">Somme à payer</h5>
-						<img src="assets/img/mon.png" class="card-img-top" style="opacity: 1;">
-						<div class="card-body">
-						  <p id="somme_reste" class="card-text text-center ordre"><img src="assets/img/home-load.gif"></p>
-						</div>
-					</div>
+					<div class="buttons">
+                                                <span id='budget_cotisation' class="cot" onclick="budget_cotisation()"><button class="btnh"><i class="fa fa-bars"></i> Cotisation</button></span>
+                                                <span id='budget_depense' class="dep" onclick="budget_depense()" ><button class="btnh"><i class="fa fa-bars"></i> Dépense</button></span>
+                                                <span id='budget_jirama' class="jir" onclick="budget_jirama()"><button class="btnh" ><i class="fa fa-bars"></i> Jirama</button></span>
+                                                <span id='budget_dette' class="det" onclick="budget_dette()"><button class="btnh" ><i class="fa fa-bars"></i> Dette</button></span>
+                                                <span id='budget_stat' class="stat" onclick="budget_stat()"><button class="btnh" ><i class="fa fa-bars"></i> Statistique</button></span>
+                                                <span id='budget_history' class="hist" onclick="budget_history()"><button class="btnh" ><i class="fa fa-bars"></i> Historique</button></span>
+                                        </div>
+                                        <hr class="sidebar-divider">
+                                        <i class="fa fa-bitcoin" style="font-size:200px"></i>
+                                        <p class="text-center" style="color: #fff; margin-top: 3%; width: 80%; margin-left: 10%;">Not all processes could be identified, non-owned process info will not be shown, you would have to be root to see it all
+                                        </p>
         			</div>
-
 
       			</div>
       			<!-- End of Main Content -->
@@ -190,15 +173,15 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel" style="font-size: 16px;">Terminer la session !</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Terminer la Session?</h5>
 					<button class="close" type="button" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">×</span>
 					</button>
 					</div>
-					<div class="modal-body" style="font-size: 15px;">Voulez-vous vraiment fermer votre session ?</div>
+					<div class="modal-body">Voulez-vous vraiment fermer votre session</div>
 					<div class="modal-footer">
-					<button class="btn btn-secondary annuler" type="button" data-dismiss="modal">Annuler</button>
-					<a class="btn btn-primary confirmer" onclick="deconnexion()">Confirmer</a>
+					<button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+					<a class="btn btn-primary" onclick="deconnexion()">Confirmer</a>
 				</div>
 			</div>
 		</div>

@@ -1,23 +1,18 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
-// const debug = require('electron-debug');
-// debug();
+//const debug = require('electron-debug')
+//debug()
 
 let mainWindow;
 
 
 function createWindow () {
 	mainWindow = new BrowserWindow({
-		width: 972,
-		height: 585,
+		width: larg,
+		height: haut,
 		center: true,
-		maxWidth: 972,
-		minWidth: 972,
-		maxHeight: haut,
-		minHeight: haut,
 		icon: __dirname + icon,
 		useContentSize: true,
-		transparent: true,
 		webPreferences: {
 			nodeIntegration: true
 		}
@@ -30,11 +25,13 @@ function createWindow () {
 }
 
 if (process.platform.toLowerCase()  == 'win32'){
-	haut  = 605
+	haut  = 601
+	larg =  974
 	icon = `/src/foyer.ico`
 }
 else{
-	haut = 585
+	haut = 601
+	larg = 972
 	icon = `/src/foyer.png`
 }
 
@@ -52,6 +49,57 @@ app.on('activate', function () {
 if (mainWindow === null) createWindow()
 })
 
+<<<<<<< HEAD
  
 
 //Menu.setApplicationMenu(menu);
+=======
+const menu = Menu.buildFromTemplate(
+	[
+		{
+			label: "Fichier",
+			submenu: [
+				{
+					label: "Fermer la fenêtre",
+					click: function(){
+						app.quit()
+					}
+				}
+			]
+		},
+
+		{
+			label: "Edition",
+			submenu: [
+				{
+					label: "Mode Sombre"
+					
+				}
+			
+			]
+		},
+
+		{
+			label: "Apropos",
+			submenu: [
+				{
+					label: "Developers"
+					
+				},
+
+				{
+					label: "Logiciel"
+					
+				},
+
+				{
+					label: "License"
+					
+				}
+			
+			]
+		}
+	]
+);
+
+Menu.setApplicationMenu(menu);

@@ -90,6 +90,43 @@ function remove_pulse(){
 }
 
 
+function home_menu(){
+  remove_lact();
+  let html = `<div class="card" style="width: 20rem;margin-left: 5% !important;margin-top: 1%; background-color: #0e1419; border: none;">
+      <h5 class="card-title text-center" style="font-size: 15px; color: #fff;">Le plat du jour | Budget</h5>
+      <img src="assets/img/humb.jpg" class="card-img-top" style="opacity: 1;">
+      <div class="card-body">
+          <p id="menu_today" class="card-text text-center ordre"><img src="assets/img/home-load.gif"></p>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;margin-left: 55% !important; margin-top: -32.3%; background-color: #0e1419; border: none;"">
+      <h5 class="card-title text-center" style="font-size: 15px; color: #fff;">Cuisinier</h5>
+      <img src="assets/img/cuis.jpg" class="card-img-top" style="opacity: 1;">
+      <div class="card-body">
+        <p class="card-text text-center ordre">Gaetan </p>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;margin-left: 5% !important; margin-top: 0.8%; background-color: #0e1419; border: none;"">
+      <h5 class="card-title text-center" style="font-size: 15px; color: #fff;">Tour de ménage | Demain</h5>
+      <img src="assets/img/clean.jpg" class="card-img-top" style="opacity: 1;">
+      <div class="card-body">
+        <p class="card-text text-center ordre">Dinahasina </p>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;margin-left: 55% !important; margin-top: -32.4%; background-color: #0e1419; border: none;"">
+      <h5  class="card-title text-center" style="font-size: 15px; color: #fff;">Somme à payer</h5>
+      <img src="assets/img/mon.png" class="card-img-top" style="opacity: 1;">
+      <div class="card-body">
+        <p id="somme_reste" class="card-text text-center ordre"><img src="assets/img/home-load.gif"></p>
+      </div>
+    </div>`;
+  
+  $('.container-fluid').html(html);
+  $('#accueil_button').addClass('lact');
+  eel.getUser()(setUser);
+}
+
+
 function budget_menu(){
   remove_lact();
   let html = `<div class="buttons">
@@ -100,7 +137,11 @@ function budget_menu(){
       <span id='budget_stat' class="stat" onclick="budget_stat()"><button class="btnh" ><i class="fa fa-bars"></i> Statistique</button></span>
       <span id='budget_history' class="hist" onclick="budget_history()"><button class="btnh" ><i class="fa fa-bars"></i> Historique</button></span>
     </div>
-    <hr class="sidebar-divider">`;
+    <hr class="sidebar-divider">
+    <i class="fa fa-bitcoin" style="font-size:200px"></i>
+    <p 
+    class="text-center" style="color: #fff; margin-top: 3%; width: 80%; margin-left: 10%;">Not all processes could be identified, non-owned process info will not be shown, you would have to be root to see it all
+    </p>`;
 
   $('.container-fluid').html(html);
   $('#budget_button').addClass('lact');
@@ -412,7 +453,7 @@ function membre_list(){
 
 
 function assign_cotisation(){
-    html = `<div class="wrap-login100 p-t-85 p-b-20">
+    html = `<div class="wrap-login100 p-t-85 p-b-20" style="margin-left:8.7% !important">
       <form class="assigner login100-form validate-form">
         <span class="login100-form-title p-b-70">
           Cotisation
@@ -468,4 +509,43 @@ function assign_cotisation(){
     eel.privilege()(set_privilege);
 
 
+}
+
+
+function deconnexion(){
+    window.location='login.html';
+}
+
+
+$(function(){
+  eel.getUser()(setUser);
+});
+
+
+function setUser(val){
+  $('.user_top').text(val);
+  eel.resteSomme(val)(print_resteSomme);
+  eel.getMenu()(print_getMenu);
+  eel.getCuisinier()(print_getCuisinier);
+}
+
+
+function print_resteSomme(somme){
+  $('#somme_reste').html(somme+ ' Ar');
+  $('#somme_reste').css('border', '1px solid rgb(223, 43, 79)');
+  $('#somme_reste').css('background-color', 'rgb(223, 43, 79)');
+}
+
+
+function print_getMenu(val){
+  $('#menu_today').html(val+ ' Ar');
+  $('#menu_today').css('border', '1px solid rgb(223, 43, 79)');
+  $('#menu_today').css('background-color', 'rgb(223, 43, 79)');
+}
+
+
+function print_getCuisinier(val){
+  $('#cuisinier_today').html(val);
+  $('#cuisinier_today').css('border', '1px solid rgb(223, 43, 79)');
+  $('#cuisinier_today').css('background-color', 'rgb(223, 43, 79)');
 }

@@ -20,9 +20,8 @@ else
 fi
 
 if [ $electron_file = "electron not found" ]; then
-    echo -e "${rougefonce} electron non trouvé ✘\n${neutre} Installer electron\n\n"
-		echo -e "1: Arch \n2: Autre\n"
-		read -p '[1/2]>> ' distro
+    echo -e "${rougefonce} electron non trouvé ✘\n${neutre} Installation electron\n\n"
+		
 		
 		if [ $distro = 1 ]
 		then
@@ -46,7 +45,7 @@ then
 else
     echo -e "${orange} Aucun env trouvé ✘\n${neutre} Création de env python..."
     python3 -m venv ./env
-    echo -e "\n${vertfonce} env créer avec success ✓${neutre}"
+    echo -e "\n${vertfonce} env créé avec success ✓${neutre}"
 fi
 
 echo -e "\nInstallation dependance python\n${neutre}"
@@ -103,7 +102,7 @@ fi
 
 rm foyerApp foyerApp.py
 
-echo -e "\n Création de Bureau et Application dans le systeme"
+echo -e "\n Création de bureau et application dans le système"
 set -x
 sudo ln -sf /opt/FoyerSociety/foyerApp /usr/bin/foyerApp
 sudo cp -f src/foyerApp.desktop /usr/share/applications/
