@@ -1,5 +1,13 @@
 # GestionFoyer
+
+[![Team](https://img.shields.io/badge/Team-FoyerSociety-brightgreen)](github.com/FoyerSociety)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](#README)
+[![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#README)
+[![Version](https://img.shields.io/badge/Version-2.0.3-orange)](github.com/FoyerSociety/GestionFoyer/releases)
+
 Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jirama,  ménage, ...)
+
+________________________________________
 
 <img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview.png" align="center" alt="preview">
 
@@ -54,6 +62,9 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
  <img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/dependances.PNG" align="center">
     
 ## Developpeurs
+
+[![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](#README)
+
 <table>
  <tr>
     <td align="center"><a href="gaetan1903.github.com"><img src="https://avatars0.githubusercontent.com/u/43904633?s=460&v=4" width="150px;" height="150px;" alt="Gaetan Jonathan"/> </td>
