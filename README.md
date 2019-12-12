@@ -12,6 +12,9 @@ ________________________________________
 <img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview.png" align="center" alt="preview">
 
 
+<img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview-win32.PNG" align="center" alt="preview windows">
+
+
 ## Installation
 
 ### LINUX (tested on Arch)
