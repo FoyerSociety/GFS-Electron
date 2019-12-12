@@ -61,7 +61,7 @@ ________________________________________
     
  <img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/dependances.PNG" align="center">
     
-## Developpeurs
+## Developers
 
 [![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](#README)
 
