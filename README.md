@@ -9,15 +9,19 @@ Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jiram
 
 ________________________________________
 
-<img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview.png" align="center" alt="preview">
+* Linux
+
+  <img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview.png" align="center" alt="preview">
 
 
-<img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview-win32.PNG" align="center" alt="preview windows">
+* Windows
+
+  <img src="https://github.com/FoyerSociety/GestionFoyer/blob/master/src/preview-win32.PNG" align="center" alt="preview windows">
 
 
 ## Installation
 
-### LINUX (tested on Arch)
+### LINUX (tested on Arch Linux - Manjaro)
 
 `$ git clone https://github.com/FoyerSociety/GestionFoyer.git`
 
@@ -26,7 +30,7 @@ ________________________________________
 `$ sudo ./install-v2.sh`
 
 
-#### Debian
+#### Debian (tested on Elementary OS - MX Linux)
   
   Pour l'installation des systèmes basés sous Debian (Ubuntu, Elementary, Linux Mint,...)
   
