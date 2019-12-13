@@ -34,7 +34,7 @@ ________________________________________
   
   Pour l'installation des systèmes basés sous Debian (Ubuntu, Elementary, Linux Mint,...)
   
-  Il est parfois mieux d'installer electron executable que par npm ( sauf si vous en avez deja fonctionnel)
+  Il est parfois mieux d'installer electron executable que par npm ( sauf si vous en avez déjà fonctionnel)
   
   * Telecharger electron compatible avec votre OS [ici](https://github.com/electron/electron/releases)
   * Decompresser et Placer dans un endroit fixe. (/opt/ recommandé)
