@@ -39,6 +39,7 @@ ________________________________________
   * Telecharger electron compatible avec votre OS [ici](https://github.com/electron/electron/releases)
   * Decompresser et Placer dans un endroit fixe. (/opt/ recommandé)
   * Créer un lien symbolique: `# ln -sf {full_path_of_electron_dir}/electron /usr/bin/electron`
+  * Aller dans la section **Linux**
 
 ### Windows (tested on Win 10)
 - Build from source
@@ -52,7 +53,7 @@ ________________________________________
     
   `python main.py`
 
-          Ce qui ouvrira au premier temps une fenetre de verification de dependance
+        Ce qui ouvrira au premier temps une fenetre de verification de dependance
 
  - Install executable (Version  with all dependances)
 
