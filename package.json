@@ -10,8 +10,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "python main.py",
-    "start": "env/bin/python main.py"
+    "test": "python main.py --dev",
+    "start": "python main.py"
   },
   "repository": {
     "type": "git",

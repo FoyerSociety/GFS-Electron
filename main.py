@@ -8,10 +8,15 @@ import os
 import json
 import hashlib
 import mysql.connector
+import argparse
 from whichcraft import which
 from datetime import datetime
 from playsound import playsound
 
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--dev", action="store_true", help="Mode test")
+args = parser.parse_args()
 
 user, users = '', None
 mois_globale = ('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin',
@@ -117,7 +122,7 @@ def db_value(key):
 	val = val.read().split(' ')
 
 	return {
-	'host' : val[0],
+	'host' : val[0] if not args.dev else "localhost",
 	'user' : val[1],
 	'password' : val[2],
 	'database' : val[3] }
