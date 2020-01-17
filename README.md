@@ -55,7 +55,7 @@ ________________________________________
 
         Ce qui ouvrira au premier temps une fenetre de verification de dependance
 
- - Install executable (Version  with all dependances)
+ - Install exécutable (Version  with all dependancies)
 
      **Download** [FoyerApp-1.0.0-alpha.exe](https://github.com/FoyerSociety/GestionFoyer/releases/download/1.0.0-alpha/foyerApp.exe)
      
