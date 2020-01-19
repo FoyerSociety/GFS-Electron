@@ -22,8 +22,8 @@ user, users = '', None
 mois_globale = ('Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin',
 				'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre')
 
-start_date = datetime(2019, 12, 9)
-start_cuisine = datetime(2019, 12, 7)
+start_date = datetime(2019, 12, 16)
+start_cuisine = datetime(2020, 1, 20)
 today_date = datetime.today()
 
 ro = None
@@ -284,10 +284,14 @@ def addUser(usr, password):
 		cursor = db.cursor()
 
 	try:
-		cursor.execute("INSERT INTO Membre(username, password) VALUES(%s, %s)", (usr.lower(), password))
+		cursor.execute("""
+			INSERT INTO Membre(username, password, cuisinier, ordures) 
+			SELECT %s, %s, max(cuisinier)+1, max(ordures)+1 FROM Membre
+			""", (usr.lower(), password))
 		db.commit()
 		return True
-	except:
+	except Exception as e:
+		print('ito ny bug >>', e)
 		db.rollback()
 		return False
 
@@ -447,7 +451,7 @@ def getCuisinier():
 
 		try:
 			cursor.execute("""
-				SELECT username FROM Membre WHERE menage=%s
+				SELECT username FROM Membre WHERE cuisinier=%s
 			""", (value, ))
 		except Exception as e:
 			print(e)
