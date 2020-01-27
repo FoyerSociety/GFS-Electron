@@ -8,9 +8,7 @@ neutre='\e[0;m'
 
 isArch=`which pacman`
 
-if [ $USER = "root" ]; then
-    test
-else
+if [ $USER != "root" ]; then
     echo -e "${rouge} Veuillez passer en mode root ✘ \n${neutre}"
     exit 1
 fi

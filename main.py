@@ -116,13 +116,18 @@ def getMember():
 
 
 def db_value(key):
-	val  = os.popen(f".\\db.windows {key}"
-					if sys.platform == "win32"
-					else f"./db.linux {key}")
-	val = val.read().split(' ')
+
+	if args.dev:
+			val = ['127.0.0.1',
+					'foyer', 'foyer', 'foyer']
+	else:
+		val  = os.popen(f".\\db.windows {key}"
+						if sys.platform == "win32"
+						else f"./db.linux {key}")
+		val = val.read().split(' ')
 
 	return {
-	'host' : val[0] if not args.dev else "localhost",
+	'host' : val[0],
 	'user' : val[1],
 	'password' : val[2],
 	'database' : val[3] }
