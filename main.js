@@ -52,7 +52,7 @@ if (mainWindow === null) createWindow()
 const menu = Menu.buildFromTemplate(
 	[
 		{
-			label: "Fichier",
+			label: " ",
 			submenu: [
 				{
 					label: "Fermer la fenêtre",
@@ -64,7 +64,7 @@ const menu = Menu.buildFromTemplate(
 		},
 
 		{
-			label: "Edition",
+			label: " ",
 			submenu: [
 				{
 					label: "Mode Sombre"
@@ -75,7 +75,7 @@ const menu = Menu.buildFromTemplate(
 		},
 
 		{
-			label: "Apropos",
+			label: " ",
 			submenu: [
 				{
 					label: "Developers"
