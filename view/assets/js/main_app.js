@@ -286,9 +286,80 @@ function budget_dette(){
 
 
 function budget_stat(){
-  budget_menu();
+  budget_menu(true);
   let stat = $('#budget_stat');
   stat.find('button').addClass('pulse-button');
+  html = `          <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4" style="height: 200px">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center" style="margin-top: 13%">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success mb-1" style="font-size: 20px">TOTAL ENTRE</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">80000 Ar</div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4" style="height: 200px">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center" style="margin-top: 13%">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="font-size: 20px">Total sorti</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">50000 Ar</div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4" style="height: 200px">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center" style="margin-top: 13%">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="font-size: 20px">Reste à payer</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">80000 Ar</div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Earnings (Monthly) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4" style="height: 200px">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center" style="margin-top: 13%">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="font-size: 20px">Total caisse</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">80000 Ar</div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  
+  css = `<link href="assets/css/cards.css" rel="stylesheet">`
+  $('head').append(css)
+  $('.container-fluid').append(html);
 }
 
 
@@ -539,8 +610,6 @@ function assign_cotisation(){
     $('#dataMember').append(`<option>foyer<option>`);
     get_dataDate();
     eel.privilege()(set_privilege);
-
-
 }
 
 
