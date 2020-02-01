@@ -1,7 +1,7 @@
 const {app, BrowserWindow, Menu} = require('electron')
 
-//const debug = require('electron-debug')
-//debug()
+const debug = require('electron-debug')
+debug()
 
 let mainWindow;
 
@@ -11,6 +11,7 @@ function createWindow () {
 		width: larg,
 		height: haut,
 		center: true,
+		resizable: true,
 		icon: __dirname + icon,
 		useContentSize: true,
 		webPreferences: {

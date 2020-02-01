@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 import sys
-if sys.platform == "win32":
-	import verification
+if sys.platform == "win32": import verification
 import eel
 import os
 import json
@@ -16,6 +15,8 @@ from playsound import playsound
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--dev", action="store_true", help="Mode test")
+parser.add_argument("-D", "--db-docker", action="store_true", help="Mode database docker")
+parser.add_argument("-S", "--nosound", action="store_true", help="Mode database docker")
 args = parser.parse_args()
 
 user, users = '', None
@@ -50,11 +51,10 @@ eel.init('view')
 
 
 def database():
-	file = open('package.json', 'r')
-	file_parse = json.load(file)
-	key = hashlib.sha1(file_parse['author'].encode())
-	file.close()
-	return mysql.connector.connect(**db_value(key.hexdigest()))
+    with open('package.json', 'r') as file:
+        file_parse = json.load(file)
+    key = hashlib.sha1(file_parse['author'].encode())
+    return mysql.connector.connect(**db_value(key.hexdigest()))
 
 
 @eel.expose
@@ -248,12 +248,11 @@ def privilege():
 
 def kill_prog():
 	os.system('netstat -paunt|grep 1903 > /tmp/.file.tmp')
-
-	val = os.popen('cut -d / -f 1 /tmp/.file.tmp && rm /tmp/.file.tmp')
-	val = val.read()
-	if val != '':
-		val = val.split(' ')[-1][:-1]
-		os.system(f'kill -9 {val}')
+	with open('/tmp/.file.tmp') as file:
+		for vfile in file:
+			vfile = vfile.split('/')[0]
+			os.system(f"kill -9 {vfile.split(' ')[-1]} 1&> /dev/null")
+	os.system('rm /tmp/.file.tmp')
 
 
 @eel.expose
@@ -331,7 +330,7 @@ def delUser(usr, passwd):
 
 @eel.expose
 def play_sound():
-	playsound('view/assets/audio/qui2.mp3')
+	if not args.nosound: playsound('view/assets/audio/qui2.mp3')
 
 
 @eel.expose
@@ -349,9 +348,7 @@ def assigner(usr, somme, mois, annee):
 			cursor.execute("""
 				SELECT 1 FROM Argent WHERE mois=%s AND annee=%s
 			""", (mois, annee))
-		except:
-			db.commit()
-			return False
+		except: return False
 		if len(cursor.fetchall()) == 0:
 			sql = "INSERT INTO Argent(username, mois, annee, apayer) VALUES (%s, %s, %s, %s)"
 			data = []

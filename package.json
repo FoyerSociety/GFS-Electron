@@ -11,7 +11,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "python main.py --dev",
-    "start": "python main.py"
+    "start": "python3 main.py"
   },
   "repository": {
     "type": "git",

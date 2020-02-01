@@ -127,7 +127,7 @@ function home_menu(){
 }
 
 
-function budget_menu(){
+function budget_menu(val=false){
   remove_lact();
   let html = `<div class="buttons">
       <span id='budget_cotisation' class="cot" onclick="budget_cotisation()"><button class="btnh"><i class="fa fa-bars"></i> Cotisation</button></span>
@@ -138,12 +138,15 @@ function budget_menu(){
       <span id='budget_history' class="hist" onclick="budget_history()"><button class="btnh" ><i class="fa fa-bars"></i> Historique</button></span>
     </div>
     <hr class="sidebar-divider">
-    <i class="fa fa-bitcoin" style="font-size:200px"></i>
+    `;
+
+    html_suite = `<i class="fa fa-bitcoin" style="font-size:200px"></i>
     <p 
     class="text-center" style="color: #fff; margin-top: 3%; width: 80%; margin-left: 10%;">Not all processes could be identified, non-owned process info will not be shown, you would have to be root to see it all
     </p>`;
 
   $('.container-fluid').html(html);
+  if (val == false){ $('.container-fluid').append(html_suite) };
   $('#budget_button').addClass('lact');
 
 }
@@ -290,9 +293,38 @@ function budget_stat(){
 
 
 function budget_history(){
-  budget_menu();
+  budget_menu(true);
   let hst = $('#budget_history');
   hst.find('button').addClass('pulse-button');
+  html = `
+        <div class="wrap-table100">
+        <div class="table100 ver1 m-b-110">
+          <div class="table100-head">
+            <table>
+              <thead>
+                <tr class="row100 head">
+                  <th class="cell100 column1">User</th>
+                  <th class="cell100 column2">Somme</th>
+                  <th class="cell100 column3">Motif</th>
+                  <th class="cell100 column4">Date</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+
+          <div class="table100-body js-pscroll">
+            <table>
+              <tbody class="tab_ref">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>`;
+  
+  css = `<link rel="stylesheet" type="text/css" href="assets/css/transac.css">`;
+  $('head').append(css);
+  $('.container-fluid').append(html);
+  eel.getHistory()(showHistory);
 }
 
 
@@ -548,4 +580,20 @@ function print_getCuisinier(val){
   $('#cuisinier_today').html(val);
   $('#cuisinier_today').css('border', '1px solid rgb(223, 43, 79)');
   $('#cuisinier_today').css('background-color', 'rgb(223, 43, 79)');
+}
+
+
+function showHistory(value){
+  if (value[0] == true ){
+      for (let i=0; i<value[1].length;i++){
+        html = `
+        <tr class="row100 body">
+          <td class="cell100 column1">${value[1][i][4]}</td>
+          <td class="cell100 column2">${value[1][i][1]} Ar</td>
+          <td class="cell100 column3">${value[1][i][3]}</td>
+          <td class="cell100 column4">${value[1][i][2]}</td>
+        </tr>`;
+      $('.tab_ref').append(html);
+      }
+  }
 }
