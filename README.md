@@ -1,7 +1,7 @@
 # GestionFoyer
 
 [![Team](https://img.shields.io/badge/Team-FoyerSociety-brightgreen)](github.com/FoyerSociety)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](#README)
+[![Maintenance](https://img.shields.io/badge/Maintained-no-red.svg)](#README)
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](#README)
 [![Version](https://img.shields.io/badge/Version-2.0.3-orange)](github.com/FoyerSociety/GestionFoyer/releases)
 
