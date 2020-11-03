@@ -7,6 +7,9 @@
 
 Une plateforme pour gérer le fonctionnement du foyer (répas, cotisation, jirama,  ménage, ...)
 
+# Ce projet est archivé dûe à changement de technologie.
+
+## Nouveau répertoire: [GFS-KivyMD](https://github.com/FoyerSociety/GFS)
 ________________________________________
 
 * Linux
